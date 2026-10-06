@@ -131,9 +131,13 @@ def load_plugin_files() -> list[tuple[Path, dict]]:
     return entries
 
 
-def dump_json(path: Path, data: dict) -> None:
+def dump_json(path: Path, data: dict) -> bool:
+    """写入文件；内容无变化时不写并返回 False。"""
     text = json.dumps(data, ensure_ascii=False, indent=2) + "\n"
+    if path.exists() and path.read_text(encoding="utf-8") == text:
+        return False
     path.write_text(text, encoding="utf-8")
+    return True
 
 
 def main() -> int:
@@ -147,22 +151,39 @@ def main() -> int:
         except (ValueError, urllib.error.URLError) as error:
             print(f"同步失败 -> {error}", file=sys.stderr)
             return 1
-        dump_json(path, metadata)
+        changed = dump_json(path, metadata)
         latest = metadata["latest"]
+        status = "已更新" if changed else "无变化"
         print(
             f"同步 {plugin_id}: v{latest['version']} "
-            f"(host_api {latest['host_api_version']})"
+            f"(host_api {latest['host_api_version']}) [{status}]"
         )
 
     plugins = [metadata for _, metadata in entries]
     plugins.sort(key=lambda item: (not item.get("official", False), item["plugin_id"]))
+
+    previous_updated_at = None
+    if INDEX_PATH.exists():
+        try:
+            previous = json.loads(INDEX_PATH.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            previous = {}
+        if (
+            previous.get("schema_version") == 1
+            and previous.get("plugins") == plugins
+        ):
+            previous_updated_at = previous.get("updated_at")
+
     index = {
         "schema_version": 1,
-        "updated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "updated_at": previous_updated_at
+        or datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "plugins": plugins,
     }
-    dump_json(INDEX_PATH, index)
-    print(f"已生成 index.json，共 {len(plugins)} 个插件")
+    if dump_json(INDEX_PATH, index):
+        print("index.json 已更新")
+    else:
+        print("index.json 无变化")
     return 0
 
 
