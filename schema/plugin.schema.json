@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/tinypinglite/sakuramedia-plugin-market/main/schema/plugin.schema.json",
+  "title": "SakuraMedia 插件市场元数据",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "plugin_id",
+    "display_name",
+    "description",
+    "author",
+    "repo",
+    "homepage",
+    "categories",
+    "official"
+  ],
+  "properties": {
+    "plugin_id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*$",
+      "maxLength": 64,
+      "description": "与插件 manifest.json 的 plugin_id 一致，也是元数据文件名"
+    },
+    "display_name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 64
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "author": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 64
+    },
+    "repo": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$",
+      "description": "公开的 GitHub 仓库（owner/name），Release 里提供插件 zip"
+    },
+    "homepage": {
+      "type": "string",
+      "format": "uri"
+    },
+    "icon": {
+      "type": ["string", "null"],
+      "description": "可选图标 URL；为空时客户端展示默认图标"
+    },
+    "categories": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "storage",
+          "metadata",
+          "discovery",
+          "automation",
+          "subtitle",
+          "other"
+        ]
+      }
+    },
+    "official": {
+      "type": "boolean",
+      "description": "官方维护的插件为 true，社区投稿为 false"
+    },
+    "latest": {
+      "type": "object",
+      "description": "由 scripts/build_index.py 从 GitHub Release 自动同步，投稿时不要手写",
+      "additionalProperties": false,
+      "required": [
+        "version",
+        "host_api_version",
+        "download_url",
+        "sha256",
+        "published_at"
+      ],
+      "properties": {
+        "version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        },
+        "host_api_version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "download_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "published_at": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        }
+      }
+    }
+  }
+}

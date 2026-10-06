@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-07T00:31:02Z",
+  "plugins": [
+    {
+      "plugin_id": "sakuramedia_115_provider",
+      "display_name": "115 网盘",
+      "description": "接入 115 网盘，提供目录浏览、影片导入、115 离线下载、302/后端代理播放、缩略图和片段。",
+      "author": "SakuraMedia",
+      "repo": "tinypinglite/sakuramedia_115_provider",
+      "homepage": "https://github.com/tinypinglite/sakuramedia_115_provider",
+      "categories": [
+        "storage"
+      ],
+      "official": true,
+      "latest": {
+        "version": "0.2.10",
+        "host_api_version": 8,
+        "download_url": "https://github.com/tinypinglite/sakuramedia_115_provider/releases/download/v0.2.10/sakuramedia_115_provider-0.2.10.zip",
+        "sha256": "8c75bd1378d70c24ffa54e65c0b0ef63df28f68b440fe173eaffdc7f87448b79",
+        "published_at": "2026-10-06T14:51:59Z"
+      }
+    },
+    {
+      "plugin_id": "sakuramedia_actor_metadata",
+      "display_name": "SakuraMedia 女优资料补全",
+      "description": "从 JavDB 和 MinnanoAV 补全本地女优资料，包括生日、身高、三围、罩杯、出生地、血型和性别。",
+      "author": "tinypinglite",
+      "repo": "tinypinglite/sakuramedia-actor-metadata",
+      "homepage": "https://github.com/tinypinglite/sakuramedia-actor-metadata",
+      "categories": [
+        "metadata"
+      ],
+      "official": true,
+      "latest": {
+        "version": "0.0.2",
+        "host_api_version": 6,
+        "download_url": "https://github.com/tinypinglite/sakuramedia-actor-metadata/releases/download/v0.0.2/sakuramedia_actor_metadata-0.0.2.zip",
+        "sha256": "527d91c38374bed1d2d5e3b568b41461223d4987d63ef58cf8f6d6c5efba5fe7",
+        "published_at": "2026-09-13T02:45:42Z"
+      }
+    },
+    {
+      "plugin_id": "sakuramedia_javbus_metadata",
+      "display_name": "JavBus",
+      "description": "JavDB 未收录时，按番号从 JavBus 补全影片标题、发行日期、时长、片商、演员、标签、封面和剧照等元数据。",
+      "author": "SakuraMedia",
+      "repo": "tinypinglite/sakuramedia_javbus_metadata",
+      "homepage": "https://github.com/tinypinglite/sakuramedia_javbus_metadata",
+      "categories": [
+        "metadata"
+      ],
+      "official": true,
+      "latest": {
+        "version": "0.0.1",
+        "host_api_version": 6,
+        "download_url": "https://github.com/tinypinglite/sakuramedia_javbus_metadata/releases/download/v0.0.1/sakuramedia_javbus_metadata-0.0.1.zip",
+        "sha256": "7cfec5bb8b091f75e73f54e3efd1d6c4a0ba2349af6e9115ae997225144b8646",
+        "published_at": "2026-09-21T05:44:38Z"
+      }
+    },
+    {
+      "plugin_id": "sakuramedia_javdb_ranking",
+      "display_name": "SakuraMedia JavDB 排行榜",
+      "description": "提供 JavDB 热播、高评分、有码、无码、FC2 和 TOP250 榜单，并注册定时同步任务。",
+      "author": "tinyping",
+      "repo": "tinypinglite/sakuramedia_javdb_ranking",
+      "homepage": "https://github.com/tinypinglite/sakuramedia_javdb_ranking",
+      "categories": [
+        "discovery"
+      ],
+      "official": true,
+      "latest": {
+        "version": "0.1.4",
+        "host_api_version": 4,
+        "download_url": "https://github.com/tinypinglite/sakuramedia_javdb_ranking/releases/download/v0.1.4/sakuramedia_javdb_ranking-0.1.4.zip",
+        "sha256": "004885ea21b8831772807dfce26d74cc247e2df6b6671fc982e532748f0a2004",
+        "published_at": "2026-09-13T02:45:12Z"
+      }
+    },
+    {
+      "plugin_id": "sakuramedia_judge_collecttion_movie",
+      "display_name": "按时长/番号特征判定合集影片",
+      "description": "按影片时长和番号前缀自动标记合集影片，不覆盖 App 内的手动判定。",
+      "author": "SakuraMedia",
+      "repo": "tinypinglite/sakuramedia_judge_collecttion_movie",
+      "homepage": "https://github.com/tinypinglite/sakuramedia_judge_collecttion_movie",
+      "categories": [
+        "automation"
+      ],
+      "official": true,
+      "latest": {
+        "version": "0.2.4",
+        "host_api_version": 4,
+        "download_url": "https://github.com/tinypinglite/sakuramedia_judge_collecttion_movie/releases/download/v0.2.4/sakuramedia_judge_collecttion_movie-0.2.4.zip",
+        "sha256": "9f544e607ceb17437a76e86048325108894c8ea3b877a7562947c4a6232c4f2c",
+        "published_at": "2026-09-13T02:45:37Z"
+      }
+    },
+    {
+      "plugin_id": "sakuramedia_local_provider",
+      "display_name": "本地存储与 qBittorrent",
+      "description": "接入本地媒体目录，提供手动导入、qBittorrent 下载、后端代理播放、缩略图和片段。",
+      "author": "SakuraMedia",
+      "repo": "tinypinglite/sakuramedia_local_provider",
+      "homepage": "https://github.com/tinypinglite/sakuramedia_local_provider",
+      "categories": [
+        "storage"
+      ],
+      "official": true,
+      "latest": {
+        "version": "0.2.5",
+        "host_api_version": 9,
+        "download_url": "https://github.com/tinypinglite/sakuramedia_local_provider/releases/download/v0.2.5/sakuramedia_local_provider-0.2.5.zip",
+        "sha256": "9b79491e93a76b40d3f399f20ef8d33c3d86baeb8fb6043bc594533ec745e348",
+        "published_at": "2026-10-04T03:12:42Z"
+      }
+    },
+    {
+      "plugin_id": "sakuramedia_more_movies",
+      "display_name": "SakuraMedia 更多影片",
+      "description": "定时抓取 JavDB 最新影片（有码/无码/FC2），热度达标且主库没有的自动入库。",
+      "author": "tinyping",
+      "repo": "tinypinglite/sakuramedia_more_movies",
+      "homepage": "https://github.com/tinypinglite/sakuramedia_more_movies",
+      "categories": [
+        "discovery"
+      ],
+      "official": true,
+      "latest": {
+        "version": "0.1.0",
+        "host_api_version": 10,
+        "download_url": "https://github.com/tinypinglite/sakuramedia_more_movies/releases/download/v0.1.0/sakuramedia_more_movies-0.1.0.zip",
+        "sha256": "abab6a12c98c54b95b6efcbb4be17591c25f9ae4d98e7e0586bd8f5568af5b42",
+        "published_at": "2026-10-07T00:28:35Z"
+      }
+    },
+    {
+      "plugin_id": "sakuramedia_more_rank_movies",
+      "display_name": "SakuraMedia 更多影片榜单",
+      "description": "接入 Minnano AV 和 JavLibrary，提供 Minnano AV 日榜/周榜/月榜以及 JavLibrary 高评价、最想要榜单，并注册定时同步任务。",
+      "author": "tinyping",
+      "repo": "tinypinglite/sakuramedia_more_rank_movies",
+      "homepage": "https://github.com/tinypinglite/sakuramedia_more_rank_movies",
+      "categories": [
+        "discovery"
+      ],
+      "official": true,
+      "latest": {
+        "version": "0.0.4",
+        "host_api_version": 10,
+        "download_url": "https://github.com/tinypinglite/sakuramedia_more_rank_movies/releases/download/v0.0.4/sakuramedia_more_rank_movies-0.0.4.zip",
+        "sha256": "1871bed9706beafb0b52a498a76d9bc532cfbe06d34c915e8e4d837691c04698",
+        "published_at": "2026-10-05T04:39:24Z"
+      }
+    },
+    {
+      "plugin_id": "sakuramedia_movie_scrape_translate",
+      "display_name": "SakuraMedia 影片文案抓取与翻译",
+      "description": "从 DMM 抓取影片的日文标题和简介，可选翻译成中文后写回影片标题与简介。",
+      "author": "tinyping",
+      "repo": "tinypinglite/sakuramedia_movie_scrape_translate",
+      "homepage": "https://github.com/tinypinglite/sakuramedia_movie_scrape_translate",
+      "categories": [
+        "metadata"
+      ],
+      "official": true,
+      "latest": {
+        "version": "0.0.1",
+        "host_api_version": 6,
+        "download_url": "https://github.com/tinypinglite/sakuramedia_movie_scrape_translate/releases/download/v0.0.1/sakuramedia_movie_scrape_translate-0.0.1.zip",
+        "sha256": "792bfdc09f55f0a5c0511e2b18b90a4a6a41d37f13d68481d53c0ea1b0a8b93e",
+        "published_at": "2026-10-05T06:22:07Z"
+      }
+    },
+    {
+      "plugin_id": "sakuramedia_subtitlecat",
+      "display_name": "SakuraMedia SubtitleCat 中文字幕",
+      "description": "为已有影片抓取 zh-CN 字幕，支持手动抓取单部影片和定时处理已订阅影片。",
+      "author": "tinypinglite",
+      "repo": "tinypinglite/sakuramedia_subtitlecat",
+      "homepage": "https://github.com/tinypinglite/sakuramedia_subtitlecat",
+      "categories": [
+        "subtitle"
+      ],
+      "official": true,
+      "latest": {
+        "version": "0.2.3",
+        "host_api_version": 4,
+        "download_url": "https://github.com/tinypinglite/sakuramedia_subtitlecat/releases/download/v0.2.3/sakuramedia_subtitlecat-0.2.3.zip",
+        "sha256": "8547a2bd99ea91ee2616c0c24c3921dfd4d827462c62a7fa83be283409bba7aa",
+        "published_at": "2026-09-13T02:45:18Z"
+      }
+    }
+  ]
+}

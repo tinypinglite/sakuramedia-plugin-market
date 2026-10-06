@@ -1,0 +1,19 @@
+{
+  "plugin_id": "sakuramedia_more_movies",
+  "display_name": "SakuraMedia 更多影片",
+  "description": "定时抓取 JavDB 最新影片（有码/无码/FC2），热度达标且主库没有的自动入库。",
+  "author": "tinyping",
+  "repo": "tinypinglite/sakuramedia_more_movies",
+  "homepage": "https://github.com/tinypinglite/sakuramedia_more_movies",
+  "categories": [
+    "discovery"
+  ],
+  "official": true,
+  "latest": {
+    "version": "0.1.0",
+    "host_api_version": 10,
+    "download_url": "https://github.com/tinypinglite/sakuramedia_more_movies/releases/download/v0.1.0/sakuramedia_more_movies-0.1.0.zip",
+    "sha256": "abab6a12c98c54b95b6efcbb4be17591c25f9ae4d98e7e0586bd8f5568af5b42",
+    "published_at": "2026-10-07T00:28:35Z"
+  }
+}

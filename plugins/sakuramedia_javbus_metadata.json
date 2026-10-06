@@ -1,0 +1,19 @@
+{
+  "plugin_id": "sakuramedia_javbus_metadata",
+  "display_name": "JavBus",
+  "description": "JavDB 未收录时，按番号从 JavBus 补全影片标题、发行日期、时长、片商、演员、标签、封面和剧照等元数据。",
+  "author": "SakuraMedia",
+  "repo": "tinypinglite/sakuramedia_javbus_metadata",
+  "homepage": "https://github.com/tinypinglite/sakuramedia_javbus_metadata",
+  "categories": [
+    "metadata"
+  ],
+  "official": true,
+  "latest": {
+    "version": "0.0.1",
+    "host_api_version": 6,
+    "download_url": "https://github.com/tinypinglite/sakuramedia_javbus_metadata/releases/download/v0.0.1/sakuramedia_javbus_metadata-0.0.1.zip",
+    "sha256": "7cfec5bb8b091f75e73f54e3efd1d6c4a0ba2349af6e9115ae997225144b8646",
+    "published_at": "2026-09-21T05:44:38Z"
+  }
+}

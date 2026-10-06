@@ -1,0 +1,19 @@
+{
+  "plugin_id": "sakuramedia_javdb_ranking",
+  "display_name": "SakuraMedia JavDB 排行榜",
+  "description": "提供 JavDB 热播、高评分、有码、无码、FC2 和 TOP250 榜单，并注册定时同步任务。",
+  "author": "tinyping",
+  "repo": "tinypinglite/sakuramedia_javdb_ranking",
+  "homepage": "https://github.com/tinypinglite/sakuramedia_javdb_ranking",
+  "categories": [
+    "discovery"
+  ],
+  "official": true,
+  "latest": {
+    "version": "0.1.4",
+    "host_api_version": 4,
+    "download_url": "https://github.com/tinypinglite/sakuramedia_javdb_ranking/releases/download/v0.1.4/sakuramedia_javdb_ranking-0.1.4.zip",
+    "sha256": "004885ea21b8831772807dfce26d74cc247e2df6b6671fc982e532748f0a2004",
+    "published_at": "2026-09-13T02:45:12Z"
+  }
+}

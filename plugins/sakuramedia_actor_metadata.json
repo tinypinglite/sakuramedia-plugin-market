@@ -1,0 +1,19 @@
+{
+  "plugin_id": "sakuramedia_actor_metadata",
+  "display_name": "SakuraMedia 女优资料补全",
+  "description": "从 JavDB 和 MinnanoAV 补全本地女优资料，包括生日、身高、三围、罩杯、出生地、血型和性别。",
+  "author": "tinypinglite",
+  "repo": "tinypinglite/sakuramedia-actor-metadata",
+  "homepage": "https://github.com/tinypinglite/sakuramedia-actor-metadata",
+  "categories": [
+    "metadata"
+  ],
+  "official": true,
+  "latest": {
+    "version": "0.0.2",
+    "host_api_version": 6,
+    "download_url": "https://github.com/tinypinglite/sakuramedia-actor-metadata/releases/download/v0.0.2/sakuramedia_actor_metadata-0.0.2.zip",
+    "sha256": "527d91c38374bed1d2d5e3b568b41461223d4987d63ef58cf8f6d6c5efba5fe7",
+    "published_at": "2026-09-13T02:45:42Z"
+  }
+}
