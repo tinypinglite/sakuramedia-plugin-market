@@ -10,10 +10,10 @@
   ],
   "official": true,
   "latest": {
-    "version": "0.1.0",
+    "version": "0.1.1",
     "host_api_version": 10,
-    "download_url": "https://github.com/tinypinglite/sakuramedia_more_movies/releases/download/v0.1.0/sakuramedia_more_movies-0.1.0.zip",
-    "sha256": "abab6a12c98c54b95b6efcbb4be17591c25f9ae4d98e7e0586bd8f5568af5b42",
-    "published_at": "2026-10-07T00:28:35Z"
+    "download_url": "https://github.com/tinypinglite/sakuramedia_more_movies/releases/download/v0.1.1/sakuramedia_more_movies-0.1.1.zip",
+    "sha256": "fbf441cfb753b351f505a67509254e3a614350d638a828edcca9a50cbde75c58",
+    "published_at": "2026-10-07T06:33:32Z"
   }
 }

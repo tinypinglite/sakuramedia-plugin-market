@@ -10,10 +10,10 @@
   ],
   "official": true,
   "latest": {
-    "version": "0.2.4",
-    "host_api_version": 4,
-    "download_url": "https://github.com/tinypinglite/sakuramedia_judge_collecttion_movie/releases/download/v0.2.4/sakuramedia_judge_collecttion_movie-0.2.4.zip",
-    "sha256": "9f544e607ceb17437a76e86048325108894c8ea3b877a7562947c4a6232c4f2c",
-    "published_at": "2026-09-13T02:45:37Z"
+    "version": "0.2.5",
+    "host_api_version": 5,
+    "download_url": "https://github.com/tinypinglite/sakuramedia_judge_collecttion_movie/releases/download/v0.2.5/sakuramedia_judge_collecttion_movie-0.2.5.zip",
+    "sha256": "36a2e695c6752468bfbe097a59f6607ff5b77d57179d6484b82fc1b9451de64d",
+    "published_at": "2026-10-07T05:24:47Z"
   }
 }
