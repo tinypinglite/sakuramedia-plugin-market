@@ -10,10 +10,10 @@
   ],
   "official": true,
   "latest": {
-    "version": "0.1.4",
+    "version": "0.1.5",
     "host_api_version": 4,
-    "download_url": "https://github.com/tinypinglite/sakuramedia_javdb_ranking/releases/download/v0.1.4/sakuramedia_javdb_ranking-0.1.4.zip",
-    "sha256": "004885ea21b8831772807dfce26d74cc247e2df6b6671fc982e532748f0a2004",
-    "published_at": "2026-09-13T02:45:12Z"
+    "download_url": "https://github.com/tinypinglite/sakuramedia_javdb_ranking/releases/download/v0.1.5/sakuramedia_javdb_ranking-0.1.5.zip",
+    "sha256": "f5caf7f294f58bb55de4953b5efafa2d8a43494d6af55a4703175fc040ff934b",
+    "published_at": "2026-10-09T14:01:51Z"
   }
 }
