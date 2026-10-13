@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-10T07:55:40Z",
+  "updated_at": "2026-10-13T08:44:18Z",
   "plugins": [
     {
       "plugin_id": "sakuramedia_115_provider",
@@ -14,11 +14,11 @@
       ],
       "official": true,
       "latest": {
-        "version": "0.2.13",
+        "version": "0.2.14",
         "host_api_version": 8,
-        "download_url": "https://github.com/tinypinglite/sakuramedia_115_provider/releases/download/v0.2.13/sakuramedia_115_provider-0.2.13.zip",
-        "sha256": "5ce02de9384a47e0fc3b98d8239cd049414c6df66f9bd2f5f02cbf0d6ecd0cda",
-        "published_at": "2026-10-08T05:26:05Z"
+        "download_url": "https://github.com/tinypinglite/sakuramedia_115_provider/releases/download/v0.2.14/sakuramedia_115_provider-0.2.14.zip",
+        "sha256": "d5717ec5ac8ddad4802069f724b445c90b82844e80d650d904018a580ae3a70d",
+        "published_at": "2026-10-12T08:46:05Z"
       }
     },
     {
