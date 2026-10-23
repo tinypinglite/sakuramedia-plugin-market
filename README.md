@@ -10,6 +10,7 @@ SakuraMedia 插件市场的索引仓库。SakuraMedia 客户端在「系统设�
 - 收录**官方**与**社区**插件；官方插件标记 `official: true`，社区插件标记 `official: false`。
 - 收录的插件仓库必须公开，Release 必须提供根目录含 `manifest.json` 的 `.zip` 安装包，且 `manifest.plugin_id` 与 `version` 和 Release tag 一致。
 - 不收录私有仓库、来源不明或包含恶意行为的插件。
+- 插件必须使用与宿主兼容的许可证。由于插件在宿主进程内运行，推荐直接使用 PolyForm Noncommercial License 1.0.0；使用其他许可证需经维护者书面确认兼容。
 
 ## 上架插件
 
@@ -59,3 +60,8 @@ GITHUB_TOKEN=xxx python3 scripts/build_index.py
 ## 安全提示
 
 插件会在 SakuraMedia 后端进程内运行，拥有宿主开放的全部能力。请只安装可信来源的插件；社区插件未经官方审计，安装前建议先阅读其源码。
+## License
+
+本项目采用 [PolyForm Noncommercial License 1.0.0](./LICENSE)，仅允许非商业用途。
+
+Copyright (C) 2026 tinypinglite
