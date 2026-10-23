@@ -1,0 +1,12 @@
+{
+  "plugin_id": "sakuramedia_guangyapan_provider",
+  "display_name": "光鸭云盘",
+  "description": "接入光鸭云盘，提供目录浏览、影片导入、302 直链或后端代理播放、缩略图、片段，以及磁力/种子云添加下载。",
+  "author": "SakuraMedia",
+  "repo": "tinypinglite/sakuramedia_guangyapan_provider",
+  "homepage": "https://github.com/tinypinglite/sakuramedia_guangyapan_provider",
+  "categories": [
+    "storage"
+  ],
+  "official": true
+}
