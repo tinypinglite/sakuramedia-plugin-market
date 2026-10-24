@@ -8,5 +8,12 @@
   "categories": [
     "storage"
   ],
-  "official": true
+  "official": true,
+  "latest": {
+    "version": "0.0.1",
+    "host_api_version": 8,
+    "download_url": "https://github.com/tinypinglite/sakuramedia_guangyapan_provider/releases/download/v0.0.1/sakuramedia_guangyapan_provider-0.0.1.zip",
+    "sha256": "1877e51b5ba1e71bb02a88e33037ba476fa44112599a0068f8acb2efdd2a27ce",
+    "published_at": "2026-10-24T14:14:22Z"
+  }
 }
