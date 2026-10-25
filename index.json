@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-24T14:15:35Z",
+  "updated_at": "2026-10-25T07:07:41Z",
   "plugins": [
     {
       "plugin_id": "sakuramedia_115_provider",
@@ -128,11 +128,11 @@
       ],
       "official": true,
       "latest": {
-        "version": "0.2.6",
+        "version": "0.2.7",
         "host_api_version": 10,
-        "download_url": "https://github.com/tinypinglite/sakuramedia_local_provider/releases/download/v0.2.6/sakuramedia_local_provider-0.2.6.zip",
-        "sha256": "f9194c328c1f811588dafbb9787d91b0d9bba9130cc3b11820588104bdb96efc",
-        "published_at": "2026-10-08T02:38:26Z"
+        "download_url": "https://github.com/tinypinglite/sakuramedia_local_provider/releases/download/v0.2.7/sakuramedia_local_provider-0.2.7.zip",
+        "sha256": "b96509eac6d537fa45a0c12a29c5aaaf28b4fd6e91ff2246ae87d8aac8f61774",
+        "published_at": "2026-10-25T06:30:20Z"
       }
     },
     {
@@ -185,11 +185,11 @@
       ],
       "official": true,
       "latest": {
-        "version": "0.0.1",
+        "version": "0.0.2",
         "host_api_version": 6,
-        "download_url": "https://github.com/tinypinglite/sakuramedia_movie_scrape_translate/releases/download/v0.0.1/sakuramedia_movie_scrape_translate-0.0.1.zip",
-        "sha256": "792bfdc09f55f0a5c0511e2b18b90a4a6a41d37f13d68481d53c0ea1b0a8b93e",
-        "published_at": "2026-10-05T06:22:07Z"
+        "download_url": "https://github.com/tinypinglite/sakuramedia_movie_scrape_translate/releases/download/v0.0.2/sakuramedia_movie_scrape_translate-0.0.2.zip",
+        "sha256": "3dffe6d82ac9146ea8f3acc18646a68001821520925e074e0d7216d9a137dff9",
+        "published_at": "2026-10-25T06:28:16Z"
       }
     },
     {
@@ -204,11 +204,11 @@
       ],
       "official": true,
       "latest": {
-        "version": "0.2.3",
+        "version": "0.2.4",
         "host_api_version": 4,
-        "download_url": "https://github.com/tinypinglite/sakuramedia_subtitlecat/releases/download/v0.2.3/sakuramedia_subtitlecat-0.2.3.zip",
-        "sha256": "8547a2bd99ea91ee2616c0c24c3921dfd4d827462c62a7fa83be283409bba7aa",
-        "published_at": "2026-09-13T02:45:18Z"
+        "download_url": "https://github.com/tinypinglite/sakuramedia_subtitlecat/releases/download/v0.2.4/sakuramedia_subtitlecat-0.2.4.zip",
+        "sha256": "65c35d632a4c8e1acad4efbe4ed91b10ca4643f4540d57298fccde1786b840c7",
+        "published_at": "2026-10-25T06:31:30Z"
       }
     }
   ]

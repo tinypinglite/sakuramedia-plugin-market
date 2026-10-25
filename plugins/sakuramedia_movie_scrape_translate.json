@@ -10,10 +10,10 @@
   ],
   "official": true,
   "latest": {
-    "version": "0.0.1",
+    "version": "0.0.2",
     "host_api_version": 6,
-    "download_url": "https://github.com/tinypinglite/sakuramedia_movie_scrape_translate/releases/download/v0.0.1/sakuramedia_movie_scrape_translate-0.0.1.zip",
-    "sha256": "792bfdc09f55f0a5c0511e2b18b90a4a6a41d37f13d68481d53c0ea1b0a8b93e",
-    "published_at": "2026-10-05T06:22:07Z"
+    "download_url": "https://github.com/tinypinglite/sakuramedia_movie_scrape_translate/releases/download/v0.0.2/sakuramedia_movie_scrape_translate-0.0.2.zip",
+    "sha256": "3dffe6d82ac9146ea8f3acc18646a68001821520925e074e0d7216d9a137dff9",
+    "published_at": "2026-10-25T06:28:16Z"
   }
 }
