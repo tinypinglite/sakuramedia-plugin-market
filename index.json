@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-25T07:07:41Z",
+  "updated_at": "2026-10-28T07:44:52Z",
   "plugins": [
     {
       "plugin_id": "sakuramedia_115_provider",
@@ -14,11 +14,11 @@
       ],
       "official": true,
       "latest": {
-        "version": "0.2.14",
+        "version": "0.2.15",
         "host_api_version": 8,
-        "download_url": "https://github.com/tinypinglite/sakuramedia_115_provider/releases/download/v0.2.14/sakuramedia_115_provider-0.2.14.zip",
-        "sha256": "d5717ec5ac8ddad4802069f724b445c90b82844e80d650d904018a580ae3a70d",
-        "published_at": "2026-10-12T08:46:05Z"
+        "download_url": "https://github.com/tinypinglite/sakuramedia_115_provider/releases/download/v0.2.15/sakuramedia_115_provider-0.2.15.zip",
+        "sha256": "e064325a1780f545eb77906b44a473d80f36ed9f16f68192f603c7797d03404a",
+        "published_at": "2026-10-28T01:51:01Z"
       }
     },
     {
@@ -52,11 +52,11 @@
       ],
       "official": true,
       "latest": {
-        "version": "0.0.1",
+        "version": "0.0.2",
         "host_api_version": 8,
-        "download_url": "https://github.com/tinypinglite/sakuramedia_guangyapan_provider/releases/download/v0.0.1/sakuramedia_guangyapan_provider-0.0.1.zip",
-        "sha256": "1877e51b5ba1e71bb02a88e33037ba476fa44112599a0068f8acb2efdd2a27ce",
-        "published_at": "2026-10-24T14:14:22Z"
+        "download_url": "https://github.com/tinypinglite/sakuramedia_guangyapan_provider/releases/download/v0.0.2/sakuramedia_guangyapan_provider-0.0.2.zip",
+        "sha256": "e4ade15aacbfe213806679bdfce625a16ba45b53c21533b8647669b4785748a6",
+        "published_at": "2026-10-28T01:51:41Z"
       }
     },
     {
@@ -128,11 +128,11 @@
       ],
       "official": true,
       "latest": {
-        "version": "0.2.7",
+        "version": "0.2.8",
         "host_api_version": 10,
-        "download_url": "https://github.com/tinypinglite/sakuramedia_local_provider/releases/download/v0.2.7/sakuramedia_local_provider-0.2.7.zip",
-        "sha256": "b96509eac6d537fa45a0c12a29c5aaaf28b4fd6e91ff2246ae87d8aac8f61774",
-        "published_at": "2026-10-25T06:30:20Z"
+        "download_url": "https://github.com/tinypinglite/sakuramedia_local_provider/releases/download/v0.2.8/sakuramedia_local_provider-0.2.8.zip",
+        "sha256": "928b91b18f672dab688c12801ed4fdc8474e2017173c12672bc88ddeb594c165",
+        "published_at": "2026-10-28T01:50:27Z"
       }
     },
     {
