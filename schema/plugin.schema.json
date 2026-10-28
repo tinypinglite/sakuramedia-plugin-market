@@ -26,10 +26,26 @@
       "minLength": 1,
       "maxLength": 64
     },
+    "display_name_i18n": {
+      "type": "object",
+      "description": "插件展示名的多语言翻译，键是语言标签（zh-CN / en）。由 scripts/build_index.py 从已发布 Release 的 manifest 同步，不手写。",
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
     "description": {
       "type": "string",
       "minLength": 1,
       "maxLength": 200
+    },
+    "description_i18n": {
+      "type": "object",
+      "description": "插件简介的多语言翻译，键是语言标签（zh-CN / en）。由 scripts/build_index.py 从已发布 Release 的 manifest 同步，不手写。",
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1
+      }
     },
     "author": {
       "type": "string",

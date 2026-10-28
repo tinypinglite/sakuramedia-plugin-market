@@ -30,6 +30,9 @@ REQUIRED_FIELDS = (
     "categories",
     "official",
 )
+# 多语言字典字段：缺失是合法的（插件不做多语言），存在时必须覆盖这两种语言。
+I18N_FIELDS = ("display_name_i18n", "description_i18n")
+REQUIRED_LOCALES = ("zh-CN", "en")
 
 
 def validate_plugin(path: Path, data: dict, seen: set[str]) -> list[str]:
@@ -70,6 +73,32 @@ def validate_plugin(path: Path, data: dict, seen: set[str]) -> list[str]:
     if not isinstance(description, str) or not 1 <= len(description) <= 200:
         errors.append(f"{name}: description 长度必须在 1-200 之间")
 
+    for field in I18N_FIELDS:
+        errors.extend(_validate_i18n_map(name, field, data.get(field)))
+
+    return errors
+
+
+def _validate_i18n_map(name: str, field: str, value: object) -> list[str]:
+    """校验多语言字典：必须是 {语言标签: 非空字符串}。
+
+    字典整体缺失是合法的（插件不做多语言）；存在时两个语言都要有，避免英文
+    界面因为漏了 zh-CN 或 en 而露出另一种语言的文案。
+    """
+    if value is None:
+        return []
+    if not isinstance(value, dict):
+        return [f"{name}: {field} 必须是对象"]
+    errors: list[str] = []
+    for locale, text in value.items():
+        if not isinstance(locale, str) or not locale.strip():
+            errors.append(f"{name}: {field} 的语言标签必须是非空字符串")
+            continue
+        if not isinstance(text, str) or not text.strip():
+            errors.append(f"{name}: {field}.{locale} 必须是非空字符串")
+    missing = [locale for locale in REQUIRED_LOCALES if locale not in value]
+    if missing:
+        errors.append(f"{name}: {field} 缺少语言 {missing}")
     return errors
 
 

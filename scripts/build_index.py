@@ -9,7 +9,10 @@
 2. 查询 repo 的最新 Release，下载其中的 .zip 资产；
 3. 读取包内 manifest.json，校验 plugin_id 与版本号；
 4. 回写 latest 字段（version / host_api_version / download_url / sha256 / published_at）；
-5. 汇总生成 index.json。
+5. 把 manifest 里的展示名与简介同步到元数据（display_name / display_name_i18n /
+   description / description_i18n）：manifest 给了就以 manifest 为准，没给的文案保留
+   市场原值，多语言字典缺席时删掉该键；
+6. 汇总生成 index.json。
 
 任一插件同步失败时整体失败、不写文件，避免市场出现半截数据。
 """
@@ -41,6 +44,10 @@ VALID_CATEGORIES = {
     "other",
 }
 USER_AGENT = "sakuramedia-plugin-market"
+# 插件身份文案：manifest 是唯一来源，市场只保留 manifest 缺席时的兜底值。
+MANIFEST_I18N_FIELDS = ("display_name_i18n", "description_i18n")
+# 与 schema/plugin.schema.json 的 description 长度上限一致，超长直接同步失败。
+MAX_DESCRIPTION_LENGTH = 200
 
 
 def github_get(url: str, token: str | None) -> dict:
@@ -109,7 +116,52 @@ def sync_plugin(metadata: dict, token: str | None) -> dict:
         "sha256": sha256,
         "published_at": release.get("published_at"),
     }
+    apply_manifest_text(metadata, manifest, repo)
     return metadata
+
+
+def _i18n_map(value: object) -> dict[str, str]:
+    """把 manifest 的 *_i18n 规整成 {语言标签: 文本}；非法项直接丢弃。"""
+    if not isinstance(value, dict):
+        return {}
+    result: dict[str, str] = {}
+    for locale, text in value.items():
+        if not isinstance(locale, str) or not isinstance(text, str):
+            continue
+        key = locale.strip()
+        content = text.strip()
+        if key and content:
+            result[key] = content
+    return result
+
+
+def apply_manifest_text(metadata: dict, manifest: dict, repo: str) -> None:
+    """把插件 manifest 的展示文案搬进市场元数据。
+
+    插件 manifest 是展示名与简介的唯一事实源：manifest 给了就以 manifest 为准，
+    没给就保留市场原值（没做多语言的插件不会因此丢掉中文简介）。多语言字典在
+    manifest 里缺席时直接删键，避免索引里留下上一版的过期翻译。
+    """
+    display_name = manifest.get("display_name")
+    if isinstance(display_name, str) and display_name.strip():
+        metadata["display_name"] = display_name.strip()
+
+    description = manifest.get("description")
+    if isinstance(description, str) and description.strip():
+        content = description.strip()
+        if len(content) > MAX_DESCRIPTION_LENGTH:
+            fail(
+                repo,
+                f"manifest.description 超过 {MAX_DESCRIPTION_LENGTH} 字: {content!r}",
+            )
+        metadata["description"] = content
+
+    for field in MANIFEST_I18N_FIELDS:
+        translations = _i18n_map(manifest.get(field))
+        if translations:
+            metadata[field] = translations
+        else:
+            metadata.pop(field, None)
 
 
 def load_plugin_files() -> list[tuple[Path, dict]]:

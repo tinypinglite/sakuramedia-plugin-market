@@ -36,6 +36,17 @@ SakuraMedia 插件市场的索引仓库。SakuraMedia 客户端在「系统设�
 
 字段完整定义见 [`schema/plugin.schema.json`](schema/plugin.schema.json)。
 
+## 多语言元数据
+
+插件名称与简介的多语言文案以**插件 manifest 为唯一事实源**：插件在 `manifest.json` 里声明
+`display_name_i18n` 与 `description` / `description_i18n`，索引维护流程在同步 Release 时把它们搬进
+`plugins/<plugin_id>.json` 与 `index.json`。
+
+- `display_name` / `description`：原文（通常是中文）。manifest 声明了就以 manifest 为准，没声明就保留市场里已有的文案。
+- `display_name_i18n` / `description_i18n`：可选字典，键为语言标签（`zh-CN` / `en`）。manifest 声明了就整块同步，没声明就删掉该键。
+- 这四个字段由脚本自动写入，**投稿时不要手写**；要改文案就改插件 manifest 并发一版，索引会自动跟上。
+- 客户端按「当前语言 → `zh-CN` → 原文」的顺序取值；没有多语言文案的插件在英文界面下仍显示原文。
+
 ## 索引生成
 
 `index.json` 由 [`scripts/build_index.py`](scripts/build_index.py) 生成：
@@ -49,7 +60,8 @@ GITHUB_TOKEN=xxx python3 scripts/build_index.py
 1. 查询仓库的最新 Release；
 2. 下载 `.zip` 包并读取其中的 `manifest.json`，校验 `plugin_id`、`version` 与 tag 一致；
 3. 计算 sha256，回写插件元数据的 `latest` 字段；
-4. 汇总所有插件重新生成 `index.json`。
+4. 把 manifest 里的展示名与简介（含多语言版本）同步进元数据，manifest 没声明的文案保留市场原值；
+5. 汇总所有插件重新生成 `index.json`。
 
 任一插件失败时不写入任何文件，避免市场出现半截数据。客户端安装前会下载校验 sha256。
 
