@@ -1,6 +1,6 @@
 {
   "plugin_id": "sakuramedia_judge_collecttion_movie",
-  "display_name": "按时长/番号特征判定合集影片",
+  "display_name": "按时长/番号特征/标签判定合集影片",
   "description": "按影片时长和番号前缀自动标记合集影片，不覆盖 App 内的手动判定。",
   "author": "SakuraMedia",
   "repo": "tinypinglite/sakuramedia_judge_collecttion_movie",
@@ -10,10 +10,18 @@
   ],
   "official": true,
   "latest": {
-    "version": "0.2.5",
-    "host_api_version": 5,
-    "download_url": "https://github.com/tinypinglite/sakuramedia_judge_collecttion_movie/releases/download/v0.2.5/sakuramedia_judge_collecttion_movie-0.2.5.zip",
-    "sha256": "36a2e695c6752468bfbe097a59f6607ff5b77d57179d6484b82fc1b9451de64d",
-    "published_at": "2026-10-07T05:24:47Z"
+    "version": "0.2.7",
+    "host_api_version": 12,
+    "download_url": "https://github.com/tinypinglite/sakuramedia_judge_collecttion_movie/releases/download/v0.2.7/sakuramedia_judge_collecttion_movie-0.2.7.zip",
+    "sha256": "67268afc6e7d6b37f5951315fd03be265c2cf7ce61f62953e48280db64712226",
+    "published_at": "2026-10-29T07:39:43Z"
+  },
+  "display_name_i18n": {
+    "zh-CN": "按时长/番号特征/标签判定合集影片",
+    "en": "Detect collection movies by duration, number pattern or tag"
+  },
+  "description_i18n": {
+    "zh-CN": "按影片时长和番号前缀自动标记合集影片，不覆盖 App 内的手动判定。",
+    "en": "Automatically marks collection movies by duration and number prefix, without overriding manual decisions made in the app."
   }
 }

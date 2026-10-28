@@ -10,10 +10,18 @@
   ],
   "official": true,
   "latest": {
-    "version": "0.1.5",
-    "host_api_version": 4,
-    "download_url": "https://github.com/tinypinglite/sakuramedia_javdb_ranking/releases/download/v0.1.5/sakuramedia_javdb_ranking-0.1.5.zip",
-    "sha256": "f5caf7f294f58bb55de4953b5efafa2d8a43494d6af55a4703175fc040ff934b",
-    "published_at": "2026-10-09T14:01:51Z"
+    "version": "0.1.7",
+    "host_api_version": 12,
+    "download_url": "https://github.com/tinypinglite/sakuramedia_javdb_ranking/releases/download/v0.1.7/sakuramedia_javdb_ranking-0.1.7.zip",
+    "sha256": "c0247e199c74158abdca0dc83ec7faa0db21155f086920a436a01b142b0a6597",
+    "published_at": "2026-10-29T07:39:38Z"
+  },
+  "display_name_i18n": {
+    "zh-CN": "SakuraMedia JavDB 排行榜",
+    "en": "SakuraMedia JavDB Rankings"
+  },
+  "description_i18n": {
+    "zh-CN": "提供 JavDB 热播、高评分、有码、无码、FC2 和 TOP250 榜单，并注册定时同步任务。",
+    "en": "Provides JavDB trending, top-rated, censored, uncensored, FC2 and TOP250 charts, and registers scheduled sync jobs."
   }
 }

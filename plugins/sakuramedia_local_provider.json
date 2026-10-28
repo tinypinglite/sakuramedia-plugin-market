@@ -10,10 +10,18 @@
   ],
   "official": true,
   "latest": {
-    "version": "0.2.8",
-    "host_api_version": 10,
-    "download_url": "https://github.com/tinypinglite/sakuramedia_local_provider/releases/download/v0.2.8/sakuramedia_local_provider-0.2.8.zip",
-    "sha256": "928b91b18f672dab688c12801ed4fdc8474e2017173c12672bc88ddeb594c165",
-    "published_at": "2026-10-28T01:50:27Z"
+    "version": "0.2.10",
+    "host_api_version": 12,
+    "download_url": "https://github.com/tinypinglite/sakuramedia_local_provider/releases/download/v0.2.10/sakuramedia_local_provider-0.2.10.zip",
+    "sha256": "41301016e368afd13a7b8d638e220acde99e13ebcc913ebb57b2d5a3a94efc45",
+    "published_at": "2026-10-29T07:39:49Z"
+  },
+  "display_name_i18n": {
+    "zh-CN": "本地存储与 qBittorrent",
+    "en": "Local Storage & qBittorrent"
+  },
+  "description_i18n": {
+    "zh-CN": "接入本地媒体目录，提供手动导入、qBittorrent 下载、后端代理播放、缩略图和片段。",
+    "en": "Connects to local media folders and offers manual import, qBittorrent downloads, backend-proxied playback, thumbnails and clips."
   }
 }

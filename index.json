@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-28T07:44:52Z",
+  "updated_at": "2026-10-29T07:44:17Z",
   "plugins": [
     {
       "plugin_id": "sakuramedia_115_provider",
@@ -71,11 +71,19 @@
       ],
       "official": true,
       "latest": {
-        "version": "0.0.1",
-        "host_api_version": 6,
-        "download_url": "https://github.com/tinypinglite/sakuramedia_javbus_metadata/releases/download/v0.0.1/sakuramedia_javbus_metadata-0.0.1.zip",
-        "sha256": "7cfec5bb8b091f75e73f54e3efd1d6c4a0ba2349af6e9115ae997225144b8646",
-        "published_at": "2026-09-21T05:44:38Z"
+        "version": "0.0.3",
+        "host_api_version": 12,
+        "download_url": "https://github.com/tinypinglite/sakuramedia_javbus_metadata/releases/download/v0.0.3/sakuramedia_javbus_metadata-0.0.3.zip",
+        "sha256": "e2fc163f6271a2556bacf65cc8aaeafcf23f1ae5871fde627e8052627787e70f",
+        "published_at": "2026-10-29T07:38:39Z"
+      },
+      "display_name_i18n": {
+        "zh-CN": "JavBus",
+        "en": "JavBus"
+      },
+      "description_i18n": {
+        "zh-CN": "JavDB 未收录时，按番号从 JavBus 补全影片标题、发行日期、时长、片商、演员、标签、封面和剧照等元数据。",
+        "en": "Fills in missing metadata from JavBus by movie number when JavDB has no record: title, release date, duration, studio, cast, tags, cover and stills."
       }
     },
     {
@@ -90,16 +98,24 @@
       ],
       "official": true,
       "latest": {
-        "version": "0.1.5",
-        "host_api_version": 4,
-        "download_url": "https://github.com/tinypinglite/sakuramedia_javdb_ranking/releases/download/v0.1.5/sakuramedia_javdb_ranking-0.1.5.zip",
-        "sha256": "f5caf7f294f58bb55de4953b5efafa2d8a43494d6af55a4703175fc040ff934b",
-        "published_at": "2026-10-09T14:01:51Z"
+        "version": "0.1.7",
+        "host_api_version": 12,
+        "download_url": "https://github.com/tinypinglite/sakuramedia_javdb_ranking/releases/download/v0.1.7/sakuramedia_javdb_ranking-0.1.7.zip",
+        "sha256": "c0247e199c74158abdca0dc83ec7faa0db21155f086920a436a01b142b0a6597",
+        "published_at": "2026-10-29T07:39:38Z"
+      },
+      "display_name_i18n": {
+        "zh-CN": "SakuraMedia JavDB 排行榜",
+        "en": "SakuraMedia JavDB Rankings"
+      },
+      "description_i18n": {
+        "zh-CN": "提供 JavDB 热播、高评分、有码、无码、FC2 和 TOP250 榜单，并注册定时同步任务。",
+        "en": "Provides JavDB trending, top-rated, censored, uncensored, FC2 and TOP250 charts, and registers scheduled sync jobs."
       }
     },
     {
       "plugin_id": "sakuramedia_judge_collecttion_movie",
-      "display_name": "按时长/番号特征判定合集影片",
+      "display_name": "按时长/番号特征/标签判定合集影片",
       "description": "按影片时长和番号前缀自动标记合集影片，不覆盖 App 内的手动判定。",
       "author": "SakuraMedia",
       "repo": "tinypinglite/sakuramedia_judge_collecttion_movie",
@@ -109,11 +125,19 @@
       ],
       "official": true,
       "latest": {
-        "version": "0.2.5",
-        "host_api_version": 5,
-        "download_url": "https://github.com/tinypinglite/sakuramedia_judge_collecttion_movie/releases/download/v0.2.5/sakuramedia_judge_collecttion_movie-0.2.5.zip",
-        "sha256": "36a2e695c6752468bfbe097a59f6607ff5b77d57179d6484b82fc1b9451de64d",
-        "published_at": "2026-10-07T05:24:47Z"
+        "version": "0.2.7",
+        "host_api_version": 12,
+        "download_url": "https://github.com/tinypinglite/sakuramedia_judge_collecttion_movie/releases/download/v0.2.7/sakuramedia_judge_collecttion_movie-0.2.7.zip",
+        "sha256": "67268afc6e7d6b37f5951315fd03be265c2cf7ce61f62953e48280db64712226",
+        "published_at": "2026-10-29T07:39:43Z"
+      },
+      "display_name_i18n": {
+        "zh-CN": "按时长/番号特征/标签判定合集影片",
+        "en": "Detect collection movies by duration, number pattern or tag"
+      },
+      "description_i18n": {
+        "zh-CN": "按影片时长和番号前缀自动标记合集影片，不覆盖 App 内的手动判定。",
+        "en": "Automatically marks collection movies by duration and number prefix, without overriding manual decisions made in the app."
       }
     },
     {
@@ -128,11 +152,19 @@
       ],
       "official": true,
       "latest": {
-        "version": "0.2.8",
-        "host_api_version": 10,
-        "download_url": "https://github.com/tinypinglite/sakuramedia_local_provider/releases/download/v0.2.8/sakuramedia_local_provider-0.2.8.zip",
-        "sha256": "928b91b18f672dab688c12801ed4fdc8474e2017173c12672bc88ddeb594c165",
-        "published_at": "2026-10-28T01:50:27Z"
+        "version": "0.2.10",
+        "host_api_version": 12,
+        "download_url": "https://github.com/tinypinglite/sakuramedia_local_provider/releases/download/v0.2.10/sakuramedia_local_provider-0.2.10.zip",
+        "sha256": "41301016e368afd13a7b8d638e220acde99e13ebcc913ebb57b2d5a3a94efc45",
+        "published_at": "2026-10-29T07:39:49Z"
+      },
+      "display_name_i18n": {
+        "zh-CN": "本地存储与 qBittorrent",
+        "en": "Local Storage & qBittorrent"
+      },
+      "description_i18n": {
+        "zh-CN": "接入本地媒体目录，提供手动导入、qBittorrent 下载、后端代理播放、缩略图和片段。",
+        "en": "Connects to local media folders and offers manual import, qBittorrent downloads, backend-proxied playback, thumbnails and clips."
       }
     },
     {
@@ -166,11 +198,19 @@
       ],
       "official": true,
       "latest": {
-        "version": "0.0.4",
-        "host_api_version": 10,
-        "download_url": "https://github.com/tinypinglite/sakuramedia_more_rank_movies/releases/download/v0.0.4/sakuramedia_more_rank_movies-0.0.4.zip",
-        "sha256": "1871bed9706beafb0b52a498a76d9bc532cfbe06d34c915e8e4d837691c04698",
-        "published_at": "2026-10-05T04:39:24Z"
+        "version": "0.0.6",
+        "host_api_version": 12,
+        "download_url": "https://github.com/tinypinglite/sakuramedia_more_rank_movies/releases/download/v0.0.6/sakuramedia_more_rank_movies-0.0.6.zip",
+        "sha256": "91b85d204b31bdfb2a9e82d8aa1f6bec54890de2ad7e0f8c39806177477c8f48",
+        "published_at": "2026-10-29T07:39:55Z"
+      },
+      "display_name_i18n": {
+        "zh-CN": "SakuraMedia 更多影片榜单",
+        "en": "SakuraMedia More Movie Rankings"
+      },
+      "description_i18n": {
+        "zh-CN": "接入 Minnano AV 和 JavLibrary，提供 Minnano AV 日榜/周榜/月榜以及 JavLibrary 高评价、最想要榜单，并注册定时同步任务。",
+        "en": "Connects to Minnano AV and JavLibrary, offering Minnano AV daily, weekly and monthly charts plus JavLibrary best-rated and most-wanted boards, and registers scheduled sync jobs."
       }
     },
     {
