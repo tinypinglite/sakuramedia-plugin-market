@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-29T07:44:17Z",
+  "updated_at": "2026-10-31T07:46:50Z",
   "plugins": [
     {
       "plugin_id": "sakuramedia_115_provider",
@@ -14,11 +14,11 @@
       ],
       "official": true,
       "latest": {
-        "version": "0.2.15",
+        "version": "0.2.16",
         "host_api_version": 8,
-        "download_url": "https://github.com/tinypinglite/sakuramedia_115_provider/releases/download/v0.2.15/sakuramedia_115_provider-0.2.15.zip",
-        "sha256": "e064325a1780f545eb77906b44a473d80f36ed9f16f68192f603c7797d03404a",
-        "published_at": "2026-10-28T01:51:01Z"
+        "download_url": "https://github.com/tinypinglite/sakuramedia_115_provider/releases/download/v0.2.16/sakuramedia_115_provider-0.2.16.zip",
+        "sha256": "27082f11e1e6c80fa2c7934b20945683a66390c5d809375c8d45634cc3c28822",
+        "published_at": "2026-10-31T03:22:25Z"
       }
     },
     {
@@ -152,11 +152,11 @@
       ],
       "official": true,
       "latest": {
-        "version": "0.2.10",
+        "version": "0.2.11",
         "host_api_version": 12,
-        "download_url": "https://github.com/tinypinglite/sakuramedia_local_provider/releases/download/v0.2.10/sakuramedia_local_provider-0.2.10.zip",
-        "sha256": "41301016e368afd13a7b8d638e220acde99e13ebcc913ebb57b2d5a3a94efc45",
-        "published_at": "2026-10-29T07:39:49Z"
+        "download_url": "https://github.com/tinypinglite/sakuramedia_local_provider/releases/download/v0.2.11/sakuramedia_local_provider-0.2.11.zip",
+        "sha256": "21cd502d8702647318864226721623a8ce97ba82b4b99150b34137fa210b0399",
+        "published_at": "2026-10-31T03:22:35Z"
       },
       "display_name_i18n": {
         "zh-CN": "本地存储与 qBittorrent",

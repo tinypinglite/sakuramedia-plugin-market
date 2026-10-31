@@ -10,11 +10,11 @@
   ],
   "official": true,
   "latest": {
-    "version": "0.2.10",
+    "version": "0.2.11",
     "host_api_version": 12,
-    "download_url": "https://github.com/tinypinglite/sakuramedia_local_provider/releases/download/v0.2.10/sakuramedia_local_provider-0.2.10.zip",
-    "sha256": "41301016e368afd13a7b8d638e220acde99e13ebcc913ebb57b2d5a3a94efc45",
-    "published_at": "2026-10-29T07:39:49Z"
+    "download_url": "https://github.com/tinypinglite/sakuramedia_local_provider/releases/download/v0.2.11/sakuramedia_local_provider-0.2.11.zip",
+    "sha256": "21cd502d8702647318864226721623a8ce97ba82b4b99150b34137fa210b0399",
+    "published_at": "2026-10-31T03:22:35Z"
   },
   "display_name_i18n": {
     "zh-CN": "本地存储与 qBittorrent",
