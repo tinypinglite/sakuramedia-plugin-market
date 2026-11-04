@@ -10,10 +10,10 @@
   ],
   "official": true,
   "latest": {
-    "version": "0.0.3",
-    "host_api_version": 14,
-    "download_url": "https://github.com/tinypinglite/sakuramedia_guangyapan_provider/releases/download/v0.0.3/sakuramedia_guangyapan_provider-0.0.3.zip",
-    "sha256": "2ae7592d76c226cdb199822b08558853b822709fd03520b365ee42fcd2983775",
-    "published_at": "2026-11-01T06:21:03Z"
+    "version": "0.1.1",
+    "host_api_version": 16,
+    "download_url": "https://github.com/tinypinglite/sakuramedia_guangyapan_provider/releases/download/v0.1.1/sakuramedia_guangyapan_provider-0.1.1.zip",
+    "sha256": "09230cdc8f457d6027107465f9da04097a1f76eca78a850126f260366fe20ae5",
+    "published_at": "2026-11-03T09:47:57Z"
   }
 }
