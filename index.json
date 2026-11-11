@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-12T08:59:48Z",
+  "updated_at": "2026-11-12T09:42:18Z",
   "plugins": [
     {
       "plugin_id": "sakuramedia_115_provider",
@@ -84,33 +84,6 @@
       "description_i18n": {
         "zh-CN": "JavDB 未收录时，按番号从 JavBus 补全影片标题、发行日期、时长、片商、演员、标签、封面和剧照等元数据。",
         "en": "Fills in missing metadata from JavBus by movie number when JavDB has no record: title, release date, duration, studio, cast, tags, cover and stills."
-      }
-    },
-    {
-      "plugin_id": "sakuramedia_javdb_ranking",
-      "display_name": "SakuraMedia JavDB 排行榜",
-      "description": "提供 JavDB 热播、高评分、有码、无码、FC2 和 TOP250 榜单，并注册定时同步任务。",
-      "author": "tinyping",
-      "repo": "tinypinglite/sakuramedia_javdb_ranking",
-      "homepage": "https://github.com/tinypinglite/sakuramedia_javdb_ranking",
-      "categories": [
-        "discovery"
-      ],
-      "official": true,
-      "latest": {
-        "version": "0.1.7",
-        "host_api_version": 12,
-        "download_url": "https://github.com/tinypinglite/sakuramedia_javdb_ranking/releases/download/v0.1.7/sakuramedia_javdb_ranking-0.1.7.zip",
-        "sha256": "c0247e199c74158abdca0dc83ec7faa0db21155f086920a436a01b142b0a6597",
-        "published_at": "2026-10-29T07:39:38Z"
-      },
-      "display_name_i18n": {
-        "zh-CN": "SakuraMedia JavDB 排行榜",
-        "en": "SakuraMedia JavDB Rankings"
-      },
-      "description_i18n": {
-        "zh-CN": "提供 JavDB 热播、高评分、有码、无码、FC2 和 TOP250 榜单，并注册定时同步任务。",
-        "en": "Provides JavDB trending, top-rated, censored, uncensored, FC2 and TOP250 charts, and registers scheduled sync jobs."
       }
     },
     {
