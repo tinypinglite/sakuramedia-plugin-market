@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-11T08:39:41Z",
+  "updated_at": "2026-11-12T04:51:49Z",
   "plugins": [
     {
       "plugin_id": "sakuramedia_115_provider",
@@ -165,25 +165,6 @@
       "description_i18n": {
         "zh-CN": "接入本地媒体目录，提供手动导入、qBittorrent 下载、后端代理播放、缩略图和片段。",
         "en": "Connects to local media folders and offers manual import, qBittorrent downloads, backend-proxied playback, thumbnails and clips."
-      }
-    },
-    {
-      "plugin_id": "sakuramedia_more_movies",
-      "display_name": "SakuraMedia 更多影片",
-      "description": "定时抓取 JavDB 最新影片（有码/无码/FC2），热度达标且主库没有的自动入库。",
-      "author": "tinyping",
-      "repo": "tinypinglite/sakuramedia_more_movies",
-      "homepage": "https://github.com/tinypinglite/sakuramedia_more_movies",
-      "categories": [
-        "discovery"
-      ],
-      "official": true,
-      "latest": {
-        "version": "0.1.1",
-        "host_api_version": 10,
-        "download_url": "https://github.com/tinypinglite/sakuramedia_more_movies/releases/download/v0.1.1/sakuramedia_more_movies-0.1.1.zip",
-        "sha256": "fbf441cfb753b351f505a67509254e3a614350d638a828edcca9a50cbde75c58",
-        "published_at": "2026-10-07T06:33:32Z"
       }
     },
     {
