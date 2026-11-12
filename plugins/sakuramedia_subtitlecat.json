@@ -10,10 +10,10 @@
   ],
   "official": true,
   "latest": {
-    "version": "0.2.4",
-    "host_api_version": 4,
-    "download_url": "https://github.com/tinypinglite/sakuramedia_subtitlecat/releases/download/v0.2.4/sakuramedia_subtitlecat-0.2.4.zip",
-    "sha256": "65c35d632a4c8e1acad4efbe4ed91b10ca4643f4540d57298fccde1786b840c7",
-    "published_at": "2026-10-25T06:31:30Z"
+    "version": "0.2.5",
+    "host_api_version": 18,
+    "download_url": "https://github.com/tinypinglite/sakuramedia_subtitlecat/releases/download/v0.2.5/sakuramedia_subtitlecat-0.2.5.zip",
+    "sha256": "18babe4f34ffb0589e34568c479ed31a67ce2d08ed9a0628022e67e367e4cf59",
+    "published_at": "2026-11-12T08:22:32Z"
   }
 }

@@ -10,11 +10,11 @@
   ],
   "official": true,
   "latest": {
-    "version": "0.2.7",
-    "host_api_version": 12,
-    "download_url": "https://github.com/tinypinglite/sakuramedia_judge_collecttion_movie/releases/download/v0.2.7/sakuramedia_judge_collecttion_movie-0.2.7.zip",
-    "sha256": "67268afc6e7d6b37f5951315fd03be265c2cf7ce61f62953e48280db64712226",
-    "published_at": "2026-10-29T07:39:43Z"
+    "version": "0.2.8",
+    "host_api_version": 18,
+    "download_url": "https://github.com/tinypinglite/sakuramedia_judge_collecttion_movie/releases/download/v0.2.8/sakuramedia_judge_collecttion_movie-0.2.8.zip",
+    "sha256": "f096f833ea15d65c2a41c2e54a509229c400e12ba85182e05e7b853b46df5268",
+    "published_at": "2026-11-12T08:22:26Z"
   },
   "display_name_i18n": {
     "zh-CN": "按时长/番号特征/标签判定合集影片",

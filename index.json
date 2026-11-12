@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-12T04:51:49Z",
+  "updated_at": "2026-11-12T08:59:48Z",
   "plugins": [
     {
       "plugin_id": "sakuramedia_115_provider",
@@ -14,11 +14,11 @@
       ],
       "official": true,
       "latest": {
-        "version": "0.3.3",
-        "host_api_version": 17,
-        "download_url": "https://github.com/tinypinglite/sakuramedia_115_provider/releases/download/v0.3.3/sakuramedia_115_provider-0.3.3.zip",
-        "sha256": "0d53b03e8c83ea762c0f8e20745daadb076692cc1775bad43b049bd240fb191d",
-        "published_at": "2026-11-10T15:12:54Z"
+        "version": "0.3.4",
+        "host_api_version": 18,
+        "download_url": "https://github.com/tinypinglite/sakuramedia_115_provider/releases/download/v0.3.4/sakuramedia_115_provider-0.3.4.zip",
+        "sha256": "672895945c41dde05f86b102c484dde233e58f45402dd370841a5a4a7c22eb83",
+        "published_at": "2026-11-12T08:22:11Z"
       }
     },
     {
@@ -52,11 +52,11 @@
       ],
       "official": true,
       "latest": {
-        "version": "0.1.3",
-        "host_api_version": 17,
-        "download_url": "https://github.com/tinypinglite/sakuramedia_guangyapan_provider/releases/download/v0.1.3/sakuramedia_guangyapan_provider-0.1.3.zip",
-        "sha256": "d9b85695f3c04461dc0b53c650f5abcdbc961632b2d76d98a45595beff3a647d",
-        "published_at": "2026-11-10T15:12:52Z"
+        "version": "0.1.4",
+        "host_api_version": 18,
+        "download_url": "https://github.com/tinypinglite/sakuramedia_guangyapan_provider/releases/download/v0.1.4/sakuramedia_guangyapan_provider-0.1.4.zip",
+        "sha256": "02fcf8bbc4e6475ccd757b6b1fb78d4325529cb0a8c1826652fbca6bc3530063",
+        "published_at": "2026-11-12T08:22:15Z"
       }
     },
     {
@@ -125,11 +125,11 @@
       ],
       "official": true,
       "latest": {
-        "version": "0.2.7",
-        "host_api_version": 12,
-        "download_url": "https://github.com/tinypinglite/sakuramedia_judge_collecttion_movie/releases/download/v0.2.7/sakuramedia_judge_collecttion_movie-0.2.7.zip",
-        "sha256": "67268afc6e7d6b37f5951315fd03be265c2cf7ce61f62953e48280db64712226",
-        "published_at": "2026-10-29T07:39:43Z"
+        "version": "0.2.8",
+        "host_api_version": 18,
+        "download_url": "https://github.com/tinypinglite/sakuramedia_judge_collecttion_movie/releases/download/v0.2.8/sakuramedia_judge_collecttion_movie-0.2.8.zip",
+        "sha256": "f096f833ea15d65c2a41c2e54a509229c400e12ba85182e05e7b853b46df5268",
+        "published_at": "2026-11-12T08:22:26Z"
       },
       "display_name_i18n": {
         "zh-CN": "按时长/番号特征/标签判定合集影片",
@@ -152,11 +152,11 @@
       ],
       "official": true,
       "latest": {
-        "version": "0.2.14",
-        "host_api_version": 15,
-        "download_url": "https://github.com/tinypinglite/sakuramedia_local_provider/releases/download/v0.2.14/sakuramedia_local_provider-0.2.14.zip",
-        "sha256": "f2dfb56402e6f5731e90e5d11f2775ef011307cfac1c8ec7a8a6e5c00e4e13b7",
-        "published_at": "2026-11-03T01:45:32Z"
+        "version": "0.2.15",
+        "host_api_version": 18,
+        "download_url": "https://github.com/tinypinglite/sakuramedia_local_provider/releases/download/v0.2.15/sakuramedia_local_provider-0.2.15.zip",
+        "sha256": "430c85e23045cad603d9fc160796234808bda9ab9274af4d1d1ba2b25e5df76b",
+        "published_at": "2026-11-12T08:22:21Z"
       },
       "display_name_i18n": {
         "zh-CN": "本地存储与 qBittorrent",
@@ -225,11 +225,11 @@
       ],
       "official": true,
       "latest": {
-        "version": "0.2.4",
-        "host_api_version": 4,
-        "download_url": "https://github.com/tinypinglite/sakuramedia_subtitlecat/releases/download/v0.2.4/sakuramedia_subtitlecat-0.2.4.zip",
-        "sha256": "65c35d632a4c8e1acad4efbe4ed91b10ca4643f4540d57298fccde1786b840c7",
-        "published_at": "2026-10-25T06:31:30Z"
+        "version": "0.2.5",
+        "host_api_version": 18,
+        "download_url": "https://github.com/tinypinglite/sakuramedia_subtitlecat/releases/download/v0.2.5/sakuramedia_subtitlecat-0.2.5.zip",
+        "sha256": "18babe4f34ffb0589e34568c479ed31a67ce2d08ed9a0628022e67e367e4cf59",
+        "published_at": "2026-11-12T08:22:32Z"
       }
     }
   ]
