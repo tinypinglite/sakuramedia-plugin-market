@@ -1,0 +1,27 @@
+{
+  "plugin_id": "sakuramedia_fc2_metadata",
+  "display_name": "FC2",
+  "description": "按商品号从 FC2 官方商品页提供影片元数据。",
+  "author": "SakuraMedia",
+  "repo": "tinypinglite/sakuramedia_fc2_metadata",
+  "homepage": "https://github.com/tinypinglite/sakuramedia_fc2_metadata",
+  "categories": [
+    "metadata"
+  ],
+  "official": true,
+  "latest": {
+    "version": "0.1.0",
+    "host_api_version": 18,
+    "download_url": "https://github.com/tinypinglite/sakuramedia_fc2_metadata/releases/download/v0.1.0/sakuramedia_fc2_metadata-0.1.0.zip",
+    "sha256": "b1419c7dd7ca24fe8a52502ab80a5c55eb0969a1e1fe0766747fd8673e8f6c5b",
+    "published_at": "2026-11-13T02:48:41Z"
+  },
+  "display_name_i18n": {
+    "zh-CN": "FC2",
+    "en": "FC2"
+  },
+  "description_i18n": {
+    "zh-CN": "按商品号从 FC2 官方商品页提供影片元数据。",
+    "en": "Provides movie metadata from FC2 official product pages by product number."
+  }
+}

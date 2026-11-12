@@ -1,0 +1,27 @@
+{
+  "plugin_id": "sakuramedia_fc2cmadb_metadata",
+  "display_name": "FC2CMADB",
+  "description": "按商品号从 FC2CMADB 镜像提供影片元数据。",
+  "author": "SakuraMedia",
+  "repo": "tinypinglite/sakuramedia_fc2cmadb_metadata",
+  "homepage": "https://github.com/tinypinglite/sakuramedia_fc2cmadb_metadata",
+  "categories": [
+    "metadata"
+  ],
+  "official": true,
+  "latest": {
+    "version": "0.1.0",
+    "host_api_version": 18,
+    "download_url": "https://github.com/tinypinglite/sakuramedia_fc2cmadb_metadata/releases/download/v0.1.0/sakuramedia_fc2cmadb_metadata-0.1.0.zip",
+    "sha256": "15e912ed6b3d8897b50c06e7b1446e92bda224f37bc2fc0d5916b239363ae099",
+    "published_at": "2026-11-13T02:48:42Z"
+  },
+  "display_name_i18n": {
+    "zh-CN": "FC2CMADB",
+    "en": "FC2CMADB"
+  },
+  "description_i18n": {
+    "zh-CN": "按商品号从 FC2CMADB 镜像提供影片元数据。",
+    "en": "Provides movie metadata from the FC2CMADB mirror by product number."
+  }
+}

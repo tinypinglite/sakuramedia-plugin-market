@@ -1,0 +1,27 @@
+{
+  "plugin_id": "sakuramedia_dmm_metadata",
+  "display_name": "DMM / FANZA",
+  "description": "按番号从 DMM / FANZA 提供影片元数据。",
+  "author": "SakuraMedia",
+  "repo": "tinypinglite/sakuramedia_dmm_metadata",
+  "homepage": "https://github.com/tinypinglite/sakuramedia_dmm_metadata",
+  "categories": [
+    "metadata"
+  ],
+  "official": true,
+  "latest": {
+    "version": "0.1.0",
+    "host_api_version": 18,
+    "download_url": "https://github.com/tinypinglite/sakuramedia_dmm_metadata/releases/download/v0.1.0/sakuramedia_dmm_metadata-0.1.0.zip",
+    "sha256": "5eacbd0f545274773789f22bb0664002804ff0f59d2b676d1677eb62e4285aec",
+    "published_at": "2026-11-13T02:48:40Z"
+  },
+  "display_name_i18n": {
+    "zh-CN": "DMM / FANZA",
+    "en": "DMM / FANZA"
+  },
+  "description_i18n": {
+    "zh-CN": "按番号从 DMM / FANZA 提供影片元数据。",
+    "en": "Provides movie metadata from DMM / FANZA by movie number."
+  }
+}
