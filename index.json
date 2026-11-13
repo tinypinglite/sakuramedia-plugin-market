@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-13T02:49:58Z",
+  "updated_at": "2026-11-14T06:28:42Z",
   "plugins": [
     {
       "plugin_id": "sakuramedia_115_provider",
@@ -168,6 +168,60 @@
       }
     },
     {
+      "plugin_id": "sakuramedia_javdb_comment",
+      "display_name": "SakuraMedia JavDB 评论",
+      "description": "按番号从 JavDB 提供影片评论，支持分页和最新/最热排序；需要配置 JavDB 账号。",
+      "author": "SakuraMedia",
+      "repo": "tinypinglite/sakuramedia_javdb_comment",
+      "homepage": "https://github.com/tinypinglite/sakuramedia_javdb_comment",
+      "categories": [
+        "other"
+      ],
+      "official": true,
+      "latest": {
+        "version": "0.1.0",
+        "host_api_version": 18,
+        "download_url": "https://github.com/tinypinglite/sakuramedia_javdb_comment/releases/download/v0.1.0/sakuramedia_javdb_comment-0.1.0.zip",
+        "sha256": "2f485553f93e9b939e81f3ce830bb55f57a73c8eab1181281499f5fd80779873",
+        "published_at": "2026-11-14T06:22:38Z"
+      },
+      "display_name_i18n": {
+        "zh-CN": "SakuraMedia JavDB 评论",
+        "en": "SakuraMedia JavDB Reviews"
+      },
+      "description_i18n": {
+        "zh-CN": "按番号从 JavDB 提供影片评论，支持分页和最新/最热排序；需要配置 JavDB 账号。",
+        "en": "Provides JavDB movie reviews by movie number with pagination and latest/hottest sorting; requires a JavDB account."
+      }
+    },
+    {
+      "plugin_id": "sakuramedia_javdb_ranking",
+      "display_name": "SakuraMedia JavDB 排行榜",
+      "description": "提供 JavDB 热播、高评分、有码、无码、FC2 免费榜及内置 TOP250 榜单，并注册定时同步任务。",
+      "author": "tinyping",
+      "repo": "tinypinglite/sakuramedia_javdb_ranking",
+      "homepage": "https://github.com/tinypinglite/sakuramedia_javdb_ranking",
+      "categories": [
+        "discovery"
+      ],
+      "official": true,
+      "latest": {
+        "version": "0.1.7",
+        "host_api_version": 18,
+        "download_url": "https://github.com/tinypinglite/sakuramedia_javdb_ranking/releases/download/v0.1.7/sakuramedia_javdb_ranking-0.1.7.zip",
+        "sha256": "20f3425152769de6d96f73b7ac652dc13750a2f8c7d9952444b2fcdbecd49e1b",
+        "published_at": "2026-11-13T11:42:52Z"
+      },
+      "display_name_i18n": {
+        "zh-CN": "SakuraMedia JavDB 排行榜",
+        "en": "SakuraMedia JavDB Rankings"
+      },
+      "description_i18n": {
+        "zh-CN": "提供 JavDB 热播、高评分、有码、无码、FC2 免费榜及内置 TOP250 榜单，并注册定时同步任务。",
+        "en": "Provides JavDB trending, top-rated, censored, uncensored and FC2 charts plus bundled TOP250 lists, and registers scheduled sync jobs."
+      }
+    },
+    {
       "plugin_id": "sakuramedia_judge_collecttion_movie",
       "display_name": "按时长/番号特征/标签判定合集影片",
       "description": "按影片时长和番号前缀自动标记合集影片，不覆盖 App 内的手动判定。",
@@ -233,11 +287,11 @@
       ],
       "official": true,
       "latest": {
-        "version": "0.0.7",
+        "version": "0.0.8",
         "host_api_version": 18,
-        "download_url": "https://github.com/tinypinglite/sakuramedia_more_rank_movies/releases/download/v0.0.7/sakuramedia_more_rank_movies-0.0.7.zip",
-        "sha256": "b2c3ab84fd6fcf6a0dde2122ef476c303e84542f9df95c31eff8fcb7b10d15f8",
-        "published_at": "2026-11-12T13:29:38Z"
+        "download_url": "https://github.com/tinypinglite/sakuramedia_more_rank_movies/releases/download/v0.0.8/sakuramedia_more_rank_movies-0.0.8.zip",
+        "sha256": "9869421d56da80c6d72d3822e5cb09eaed1d84d08e2d6182359ea5fa0c81f858",
+        "published_at": "2026-11-14T06:22:54Z"
       },
       "display_name_i18n": {
         "zh-CN": "SakuraMedia 更多影片榜单",

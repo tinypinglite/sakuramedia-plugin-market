@@ -1,0 +1,27 @@
+{
+  "plugin_id": "sakuramedia_javdb_comment",
+  "display_name": "SakuraMedia JavDB 评论",
+  "description": "按番号从 JavDB 提供影片评论，支持分页和最新/最热排序；需要配置 JavDB 账号。",
+  "author": "SakuraMedia",
+  "repo": "tinypinglite/sakuramedia_javdb_comment",
+  "homepage": "https://github.com/tinypinglite/sakuramedia_javdb_comment",
+  "categories": [
+    "other"
+  ],
+  "official": true,
+  "latest": {
+    "version": "0.1.0",
+    "host_api_version": 18,
+    "download_url": "https://github.com/tinypinglite/sakuramedia_javdb_comment/releases/download/v0.1.0/sakuramedia_javdb_comment-0.1.0.zip",
+    "sha256": "2f485553f93e9b939e81f3ce830bb55f57a73c8eab1181281499f5fd80779873",
+    "published_at": "2026-11-14T06:22:38Z"
+  },
+  "display_name_i18n": {
+    "zh-CN": "SakuraMedia JavDB 评论",
+    "en": "SakuraMedia JavDB Reviews"
+  },
+  "description_i18n": {
+    "zh-CN": "按番号从 JavDB 提供影片评论，支持分页和最新/最热排序；需要配置 JavDB 账号。",
+    "en": "Provides JavDB movie reviews by movie number with pagination and latest/hottest sorting; requires a JavDB account."
+  }
+}

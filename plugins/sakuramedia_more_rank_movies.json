@@ -10,11 +10,11 @@
   ],
   "official": true,
   "latest": {
-    "version": "0.0.7",
+    "version": "0.0.8",
     "host_api_version": 18,
-    "download_url": "https://github.com/tinypinglite/sakuramedia_more_rank_movies/releases/download/v0.0.7/sakuramedia_more_rank_movies-0.0.7.zip",
-    "sha256": "b2c3ab84fd6fcf6a0dde2122ef476c303e84542f9df95c31eff8fcb7b10d15f8",
-    "published_at": "2026-11-12T13:29:38Z"
+    "download_url": "https://github.com/tinypinglite/sakuramedia_more_rank_movies/releases/download/v0.0.8/sakuramedia_more_rank_movies-0.0.8.zip",
+    "sha256": "9869421d56da80c6d72d3822e5cb09eaed1d84d08e2d6182359ea5fa0c81f858",
+    "published_at": "2026-11-14T06:22:54Z"
   },
   "display_name_i18n": {
     "zh-CN": "SakuraMedia 更多影片榜单",
