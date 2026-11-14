@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-14T06:28:42Z",
+  "updated_at": "2026-11-14T08:20:39Z",
   "plugins": [
     {
       "plugin_id": "sakuramedia_115_provider",
@@ -33,11 +33,11 @@
       ],
       "official": true,
       "latest": {
-        "version": "0.1.0",
+        "version": "0.1.1",
         "host_api_version": 18,
-        "download_url": "https://github.com/tinypinglite/sakuramedia-actor-metadata/releases/download/v0.1.0/sakuramedia_actor_metadata-0.1.0.zip",
-        "sha256": "a59e10522b664e0eb359c079ed7cecfd028b171a20f01ab5e8fa636327b3c7f7",
-        "published_at": "2026-11-12T10:44:08Z"
+        "download_url": "https://github.com/tinypinglite/sakuramedia-actor-metadata/releases/download/v0.1.1/sakuramedia_actor_metadata-0.1.1.zip",
+        "sha256": "f72d1a89b1ee0f0f233afe70eb772795ae691e839df2cd1467fa3d4ecbac33a2",
+        "published_at": "2026-11-14T03:37:13Z"
       }
     },
     {
@@ -52,11 +52,11 @@
       ],
       "official": true,
       "latest": {
-        "version": "0.1.0",
+        "version": "0.1.1",
         "host_api_version": 18,
-        "download_url": "https://github.com/tinypinglite/sakuramedia_dmm_metadata/releases/download/v0.1.0/sakuramedia_dmm_metadata-0.1.0.zip",
-        "sha256": "5eacbd0f545274773789f22bb0664002804ff0f59d2b676d1677eb62e4285aec",
-        "published_at": "2026-11-13T02:48:40Z"
+        "download_url": "https://github.com/tinypinglite/sakuramedia_dmm_metadata/releases/download/v0.1.1/sakuramedia_dmm_metadata-0.1.1.zip",
+        "sha256": "85e42ce5e5a02a6ec04df94b40e54efabfa9de126c0f9c485d66c218f13c7020",
+        "published_at": "2026-11-13T13:56:15Z"
       },
       "display_name_i18n": {
         "zh-CN": "DMM / FANZA",
@@ -152,11 +152,11 @@
       ],
       "official": true,
       "latest": {
-        "version": "0.1.1",
+        "version": "0.2.0",
         "host_api_version": 18,
-        "download_url": "https://github.com/tinypinglite/sakuramedia_javbus_metadata/releases/download/v0.1.1/sakuramedia_javbus_metadata-0.1.1.zip",
-        "sha256": "ef62f3fd91e8ab2135a6d5c73f1b8c5f26caf2a099f20ed7aae0e44b0276b987",
-        "published_at": "2026-11-13T02:48:40Z"
+        "download_url": "https://github.com/tinypinglite/sakuramedia_javbus_metadata/releases/download/v0.2.0/sakuramedia_javbus_metadata-0.2.0.zip",
+        "sha256": "1a0b62a31547d48fc2eab96c7d58605d3e7662caad29ca0a5a462a0b9a5a7787",
+        "published_at": "2026-11-14T03:56:49Z"
       },
       "display_name_i18n": {
         "zh-CN": "JavBus",

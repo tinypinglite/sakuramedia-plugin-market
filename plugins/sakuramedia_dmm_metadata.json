@@ -10,11 +10,11 @@
   ],
   "official": true,
   "latest": {
-    "version": "0.1.0",
+    "version": "0.1.1",
     "host_api_version": 18,
-    "download_url": "https://github.com/tinypinglite/sakuramedia_dmm_metadata/releases/download/v0.1.0/sakuramedia_dmm_metadata-0.1.0.zip",
-    "sha256": "5eacbd0f545274773789f22bb0664002804ff0f59d2b676d1677eb62e4285aec",
-    "published_at": "2026-11-13T02:48:40Z"
+    "download_url": "https://github.com/tinypinglite/sakuramedia_dmm_metadata/releases/download/v0.1.1/sakuramedia_dmm_metadata-0.1.1.zip",
+    "sha256": "85e42ce5e5a02a6ec04df94b40e54efabfa9de126c0f9c485d66c218f13c7020",
+    "published_at": "2026-11-13T13:56:15Z"
   },
   "display_name_i18n": {
     "zh-CN": "DMM / FANZA",

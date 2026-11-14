@@ -10,11 +10,11 @@
   ],
   "official": true,
   "latest": {
-    "version": "0.1.1",
+    "version": "0.2.0",
     "host_api_version": 18,
-    "download_url": "https://github.com/tinypinglite/sakuramedia_javbus_metadata/releases/download/v0.1.1/sakuramedia_javbus_metadata-0.1.1.zip",
-    "sha256": "ef62f3fd91e8ab2135a6d5c73f1b8c5f26caf2a099f20ed7aae0e44b0276b987",
-    "published_at": "2026-11-13T02:48:40Z"
+    "download_url": "https://github.com/tinypinglite/sakuramedia_javbus_metadata/releases/download/v0.2.0/sakuramedia_javbus_metadata-0.2.0.zip",
+    "sha256": "1a0b62a31547d48fc2eab96c7d58605d3e7662caad29ca0a5a462a0b9a5a7787",
+    "published_at": "2026-11-14T03:56:49Z"
   },
   "display_name_i18n": {
     "zh-CN": "JavBus",

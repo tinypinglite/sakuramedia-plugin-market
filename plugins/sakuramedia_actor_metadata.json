@@ -10,10 +10,10 @@
   ],
   "official": true,
   "latest": {
-    "version": "0.1.0",
+    "version": "0.1.1",
     "host_api_version": 18,
-    "download_url": "https://github.com/tinypinglite/sakuramedia-actor-metadata/releases/download/v0.1.0/sakuramedia_actor_metadata-0.1.0.zip",
-    "sha256": "a59e10522b664e0eb359c079ed7cecfd028b171a20f01ab5e8fa636327b3c7f7",
-    "published_at": "2026-11-12T10:44:08Z"
+    "download_url": "https://github.com/tinypinglite/sakuramedia-actor-metadata/releases/download/v0.1.1/sakuramedia_actor_metadata-0.1.1.zip",
+    "sha256": "f72d1a89b1ee0f0f233afe70eb772795ae691e839df2cd1467fa3d4ecbac33a2",
+    "published_at": "2026-11-14T03:37:13Z"
   }
 }
