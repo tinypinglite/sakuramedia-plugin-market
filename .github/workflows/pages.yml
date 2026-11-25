@@ -6,6 +6,7 @@ on:
     paths:
       - 'plugins/**'
       - 'releases/**'
+      - 'skills/**'
       - 'index.json'
       - '.github/workflows/pages.yml'
   workflow_dispatch:

@@ -32,6 +32,11 @@ SakuraMedia 插件市场的索引仓库。SakuraMedia 客户端在「系统设�
 
 字段完整定义见 [`schema/plugin.schema.json`](schema/plugin.schema.json)。
 
+
+## Skills
+
+`skills/index.json` 和打包好的 `skills/<name>-<version>.zip` 是给 SakuraMedia 的 Agent skill 用的（客户端「连接 Agent」页面读取）。**这个目录不要手改**：它由 [`tinypinglite/sakuramedia-official-plugins`](https://github.com/tinypinglite/sakuramedia-official-plugins) 的 `Release Skills` workflow 在每次 push `main` 时打包写入，并由 `scripts/validate_metadata.py` 校验。
+
 ## 多语言元数据
 
 插件名称与简介的多语言文案以**插件 manifest 为唯一事实源**：插件在 `manifest.json` 里声明

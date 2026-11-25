@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-11-26T11:49:24Z",
+  "skills": [
+    {
+      "name": "sakuramedia-acquire",
+      "author": "SakuraMedia",
+      "official": true,
+      "display_name": "补片",
+      "display_name_en": "Acquire",
+      "description": "查片、找资源、提交下载、跟进导入，并在导入失败时查找元数据候选重试。",
+      "description_en": "Find a movie, search candidates, submit a download, follow import, and repair failed metadata matches.",
+      "version": "0.1.0",
+      "download_url": "https://tinypinglite.github.io/sakuramedia-plugin-market/skills/sakuramedia-acquire-0.1.0.zip",
+      "sha256": "9e41ecc7ba295b229d9789359019fbac216ae94c3a6786bef14783d8fe263fed"
+    }
+  ]
+}

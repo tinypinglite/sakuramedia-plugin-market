@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""校验 plugins/*.json 与 releases/*.json 的静态元数据（PR 与 CI 使用）。"""
+"""校验 plugins/*.json、releases/*.json 与 skills/index.json 的静态元数据（PR 与 CI 使用）。"""
 
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 import sys
@@ -13,6 +14,10 @@ from urllib.parse import urlparse
 ROOT = Path(__file__).resolve().parent.parent
 PLUGINS_DIR = ROOT / "plugins"
 RELEASES_DIR = ROOT / "releases"
+SKILLS_DIR = ROOT / "skills"
+SKILL_NAME_RE = re.compile(r"^[a-z][a-z0-9-]*$")
+OFFICIAL_SKILL_NAME_PREFIX = "sakuramedia-"
+OFFICIAL_SKILL_AUTHOR = "SakuraMedia"
 PLUGIN_ID_RE = re.compile(r"^[a-z][a-z0-9_]*$")
 REPO_RE = re.compile(r"^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$")
 VERSION_RE = re.compile(r"^\d+\.\d+\.\d+$")
@@ -263,6 +268,85 @@ def validate_release(
     return errors
 
 
+def _sha256_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def validate_skills() -> list[str]:
+    """校验 skills/index.json：字段、名字唯一、官方保留项、zip 与 sha256。"""
+    index_path = SKILLS_DIR / "index.json"
+    if not index_path.is_file():
+        return []
+    try:
+        data = json.loads(index_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as error:
+        return [f"skills/index.json: JSON 解析失败: {error}"]
+    if not isinstance(data, dict):
+        return ["skills/index.json: 顶层必须是对象"]
+    skills = data.get("skills")
+    if not isinstance(skills, list) or not skills:
+        return ["skills/index.json: skills 必须是非空数组"]
+
+    errors: list[str] = []
+    seen: set[str] = set()
+    for position, skill in enumerate(skills):
+        if not isinstance(skill, dict):
+            errors.append(f"skills[{position}]: 必须是对象")
+            continue
+        name = skill.get("name")
+        if not isinstance(name, str) or not SKILL_NAME_RE.fullmatch(name):
+            errors.append(f"skills[{position}]: name 必须是小写连字符格式")
+            continue
+        label = f"skills/{name}"
+        if name in seen:
+            errors.append(f"{label}: name 重复")
+        seen.add(name)
+
+        version = skill.get("version")
+        if not isinstance(version, str) or not VERSION_RE.fullmatch(version):
+            errors.append(f"{label}: version 必须是 x.y.z")
+            version = None
+        for field in ("author", "download_url", "sha256"):
+            value = skill.get(field)
+            if not isinstance(value, str) or not value:
+                errors.append(f"{label}: 缺少 {field}")
+
+        official = skill.get("official")
+        if not isinstance(official, bool):
+            errors.append(f"{label}: official 必须是布尔值")
+        elif not official:
+            if name.startswith(OFFICIAL_SKILL_NAME_PREFIX):
+                errors.append(
+                    f"{label}: {OFFICIAL_SKILL_NAME_PREFIX}* 前缀只给官方 skill"
+                )
+            author = skill.get("author")
+            if isinstance(author, str) and (
+                author.casefold() == OFFICIAL_SKILL_AUTHOR.casefold()
+            ):
+                errors.append(f"{label}: 作者名 {OFFICIAL_SKILL_AUTHOR} 只给官方 skill")
+
+        if version is None:
+            continue
+        zip_name = f"{name}-{version}.zip"
+        zip_path = SKILLS_DIR / zip_name
+        expected_digest = skill.get("sha256")
+        if not zip_path.is_file():
+            errors.append(f"{label}: 缺少 {zip_name}")
+        elif isinstance(expected_digest, str) and expected_digest:
+            if _sha256_file(zip_path) != expected_digest:
+                errors.append(f"{label}: sha256 与 {zip_name} 不一致")
+        download_url = skill.get("download_url")
+        if isinstance(download_url, str) and not download_url.endswith(
+            f"/{zip_name}"
+        ):
+            errors.append(f"{label}: download_url 必须以 {zip_name} 结尾")
+    return errors
+
+
 def main() -> int:
     errors: list[str] = []
     seen: set[str] = set()
@@ -299,13 +383,21 @@ def main() -> int:
             continue
         errors.extend(validate_release(path, data, plugins_by_id))
 
+    errors.extend(validate_skills())
+
     if errors:
         for error in errors:
             print(f"校验失败: {error}", file=sys.stderr)
         return 1
+    skill_count = 0
+    skills_index = SKILLS_DIR / "index.json"
+    if skills_index.is_file():
+        skill_count = len(
+            json.loads(skills_index.read_text(encoding="utf-8")).get("skills", [])
+        )
     print(
         f"校验通过，共 {len(seen)} 个插件，"
-        f"{len(release_paths)} 份 Release 元数据"
+        f"{len(release_paths)} 份 Release 元数据，{skill_count} 个 skill"
     )
     return 0
 

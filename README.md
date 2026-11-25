@@ -31,6 +31,11 @@ Available categories: `storage` (storage / downloads), `metadata` (metadata), `d
 
 See [`schema/plugin.schema.json`](schema/plugin.schema.json) for the complete field definitions.
 
+
+## Skills
+
+`skills/index.json` plus the packaged `skills/<name>-<version>.zip` archives serve the SakuraMedia agent skills (`App → Connect Agent`). **Do not edit this directory by hand**: it is written by the `Release Skills` workflow in [`tinypinglite/sakuramedia-official-plugins`](https://github.com/tinypinglite/sakuramedia-official-plugins), which packages `skills/**` on every push to `main` and validates the result with `scripts/validate_metadata.py`.
+
 ## Multilingual metadata
 
 The **plugin manifest is the single source of truth** for multilingual plugin names and descriptions: a plugin declares `display_name_i18n` and `description` / `description_i18n` in `manifest.json`, and the index maintenance workflow copies them into `plugins/<plugin_id>.json` and `index.json` when syncing a Release.
