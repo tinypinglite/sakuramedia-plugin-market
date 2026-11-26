@@ -1,0 +1,10 @@
+{
+  "name": "sakuramedia-skill-builder",
+  "author": "SakuraMedia",
+  "display_name": "技能工厂",
+  "display_name_en": "Skill Builder",
+  "version": "0.1.0",
+  "description": "根据当前后端真实的 API 端点，规划并生成新的 SakuraMedia Agent skill：列出端点与副作用分级、产出 skill 骨架、检查写操作是否都有用户确认门禁。",
+  "description_en": "Plan and scaffold new SakuraMedia agent skills from the backend's real endpoints: list endpoints with a side-effect classification, generate a skill skeleton, and verify every write command is gated behind user confirmation.",
+  "entrypoint": "scripts/skill_builder.py"
+}

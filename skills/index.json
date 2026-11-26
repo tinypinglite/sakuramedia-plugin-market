@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-27T02:51:25Z",
+  "updated_at": "2026-11-27T02:51:37Z",
   "skills": [
     {
       "name": "sakuramedia-acquire",
@@ -14,6 +14,19 @@
       "version": "0.1.0",
       "download_url": "https://tinypinglite.github.io/sakuramedia-plugin-market/skills/sakuramedia-acquire-0.1.0.zip",
       "sha256": "fc38478254d1eed2a945d79217247809aab2964da336fee60a6df76b604ae4d2"
+    },
+    {
+      "name": "sakuramedia-skill-builder",
+      "author": "SakuraMedia",
+      "official": true,
+      "content_sha256": "7eb610dc7e42ae410c18ab26546e5629c5af4676bf2493f6e4b6fc899f39a5a8",
+      "display_name": "技能工厂",
+      "display_name_en": "Skill Builder",
+      "description": "根据当前后端真实的 API 端点，规划并生成新的 SakuraMedia Agent skill：列出端点与副作用分级、产出 skill 骨架、检查写操作是否都有用户确认门禁。",
+      "description_en": "Plan and scaffold new SakuraMedia agent skills from the backend's real endpoints: list endpoints with a side-effect classification, generate a skill skeleton, and verify every write command is gated behind user confirmation.",
+      "version": "0.1.0",
+      "download_url": "https://tinypinglite.github.io/sakuramedia-plugin-market/skills/sakuramedia-skill-builder-0.1.0.zip",
+      "sha256": "ce1b83be7c9bd85fd67f7aea33990d88fa878cd00baace5041ac7641d403e55b"
     }
   ]
 }
