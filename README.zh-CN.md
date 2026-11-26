@@ -35,7 +35,15 @@ SakuraMedia 插件市场的索引仓库。SakuraMedia 客户端在「系统设�
 
 ## Skills
 
-`skills/index.json` 和打包好的 `skills/<name>-<version>.zip` 是给 SakuraMedia 的 Agent skill 用的（客户端「连接 Agent」页面读取）。**这个目录不要手改**：它由 [`tinypinglite/sakuramedia-official-plugins`](https://github.com/tinypinglite/sakuramedia-official-plugins) 的 `Release Skills` workflow 在每次 push `main` 时打包写入，并由 `scripts/validate_metadata.py` 校验。
+`skills/<name>/` 存放 agent skill 的源码（`skill.json`、`SKILL.md`、入口脚本），同一目录下还有打包好的 `skills/<name>-<version>.zip` 和 `skills/index.json`。客户端「连接 Agent」读取这个索引。
+
+新增或更新一个 skill：
+
+1. 修改或新建 `skills/<name>/`（`skill.json` 的 name 必须等于目录名；内容变了记得递增 `version`），
+2. 运行 `python3 scripts/package_skills.py`，
+3. 把源码和重新生成的 zip、`index.json` 一起提交。
+
+`scripts/validate_metadata.py` 会在"产物和源码不一致"时让构建失败。`sakuramedia-` 名字前缀和 `SakuraMedia` 作者名只留给官方 skill。
 
 ## 多语言元数据
 

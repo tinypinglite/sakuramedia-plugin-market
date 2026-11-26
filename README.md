@@ -34,7 +34,15 @@ See [`schema/plugin.schema.json`](schema/plugin.schema.json) for the complete fi
 
 ## Skills
 
-`skills/index.json` plus the packaged `skills/<name>-<version>.zip` archives serve the SakuraMedia agent skills (`App → Connect Agent`). **Do not edit this directory by hand**: it is written by the `Release Skills` workflow in [`tinypinglite/sakuramedia-official-plugins`](https://github.com/tinypinglite/sakuramedia-official-plugins), which packages `skills/**` on every push to `main` and validates the result with `scripts/validate_metadata.py`.
+`skills/<name>/` holds the agent skill sources (`skill.json`, `SKILL.md`, entrypoint script), and the same directory holds the packaged `skills/<name>-<version>.zip` files plus `skills/index.json`. SakuraMedia clients read that index from "Connect Agent".
+
+To add or update a skill:
+
+1. edit or create `skills/<name>/` (`skill.json` name must equal the folder name; bump `version` for content changes),
+2. run `python3 scripts/package_skills.py`,
+3. commit the sources together with the regenerated zip and `index.json`.
+
+`scripts/validate_metadata.py` fails the build when the packaged artifacts do not match the sources. The `sakuramedia-` name prefix and the `SakuraMedia` author name are reserved for official skills.
 
 ## Multilingual metadata
 

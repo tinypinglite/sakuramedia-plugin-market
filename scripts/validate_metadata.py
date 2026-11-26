@@ -7,9 +7,16 @@ import hashlib
 import json
 import re
 import sys
+import tempfile
 from datetime import datetime
 from pathlib import Path
 from urllib.parse import urlparse
+
+from package_skills import (
+    DEFAULT_PUBLIC_BASE_URL,
+    PackageError,
+    build_skills,
+)
 
 ROOT = Path(__file__).resolve().parent.parent
 PLUGINS_DIR = ROOT / "plugins"
@@ -18,6 +25,17 @@ SKILLS_DIR = ROOT / "skills"
 SKILL_NAME_RE = re.compile(r"^[a-z][a-z0-9-]*$")
 OFFICIAL_SKILL_NAME_PREFIX = "sakuramedia-"
 OFFICIAL_SKILL_AUTHOR = "SakuraMedia"
+SKILL_ARTIFACT_FIELDS = (
+    "version",
+    "author",
+    "official",
+    "content_sha256",
+    "display_name",
+    "display_name_en",
+    "description",
+    "description_en",
+    "download_url",
+)
 PLUGIN_ID_RE = re.compile(r"^[a-z][a-z0-9_]*$")
 REPO_RE = re.compile(r"^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$")
 VERSION_RE = re.compile(r"^\d+\.\d+\.\d+$")
@@ -276,6 +294,40 @@ def _sha256_file(path: Path) -> str:
     return digest.hexdigest()
 
 
+def validate_skill_artifacts(
+    committed: dict[str, dict],
+) -> list[str]:
+    """校验打包产物与 skills/ 源码一致：改了源就必须重新打包并提交。"""
+    with tempfile.TemporaryDirectory() as temporary:
+        try:
+            catalog = build_skills(
+                skills_dir=SKILLS_DIR,
+                output_dir=Path(temporary),
+                public_base_url=DEFAULT_PUBLIC_BASE_URL,
+            )
+        except PackageError as exc:
+            return [f"skills: 打包失败: {exc}"]
+    generated = {str(entry["name"]): entry for entry in catalog["skills"]}
+    errors: list[str] = []
+    missing = sorted(set(generated) - set(committed))
+    extra = sorted(set(committed) - set(generated))
+    for name in missing:
+        errors.append(f"skills/{name}: 源目录存在但 index.json 里没有，请重新打包")
+    for name in extra:
+        errors.append(f"skills/{name}: index.json 里有但源目录不存在，请重新打包")
+    for name, entry in generated.items():
+        current = committed.get(name)
+        if current is None:
+            continue
+        for field in SKILL_ARTIFACT_FIELDS:
+            if current.get(field) != entry.get(field):
+                errors.append(
+                    f"skills/{name}: {field} 与源不一致，"
+                    "请运行 python3 scripts/package_skills.py 后提交产物"
+                )
+    return errors
+
+
 def validate_skills() -> list[str]:
     """校验 skills/index.json：字段、名字唯一、官方保留项、zip 与 sha256。"""
     index_path = SKILLS_DIR / "index.json"
@@ -344,6 +396,13 @@ def validate_skills() -> list[str]:
             f"/{zip_name}"
         ):
             errors.append(f"{label}: download_url 必须以 {zip_name} 结尾")
+
+    committed = {
+        str(skill.get("name")): skill
+        for skill in skills
+        if isinstance(skill, dict) and isinstance(skill.get("name"), str)
+    }
+    errors.extend(validate_skill_artifacts(committed))
     return errors
 
 
