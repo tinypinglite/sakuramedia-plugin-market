@@ -1,0 +1,12 @@
+{
+  "plugin_id": "sakuramedia_javranking",
+  "display_name": "JavRanking 影片排行榜",
+  "description": "从 JavRanking 公开榜单同步 DMM 本周热销、JavRanking 本周热播、JavLibrary TOP250 与全站神作总榜番号，宿主按已启用元数据源补齐影片资料；支持每周定时与手动同步。",
+  "author": "InkiChang",
+  "repo": "InkiChang/sakuramedia_javranking",
+  "homepage": "https://github.com/InkiChang/sakuramedia_javranking",
+  "categories": [
+    "discovery"
+  ],
+  "official": false
+}
