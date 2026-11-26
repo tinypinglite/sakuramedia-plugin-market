@@ -1,12 +1,27 @@
 {
   "plugin_id": "sakuramedia_javranking",
   "display_name": "JavRanking 影片排行榜",
-  "description": "从 JavRanking 公开榜单同步 DMM 本周热销、JavRanking 本周热播、JavLibrary TOP250 与全站神作总榜番号，宿主按已启用元数据源补齐影片资料；支持每周定时与手动同步。",
+  "description": "同步 JavRanking 的四个榜单，支持一次手动同步或每周定时更新。",
   "author": "InkiChang",
   "repo": "InkiChang/sakuramedia_javranking",
   "homepage": "https://github.com/InkiChang/sakuramedia_javranking",
   "categories": [
     "discovery"
   ],
-  "official": false
+  "official": false,
+  "latest": {
+    "version": "1.3.2",
+    "host_api_version": 18,
+    "download_url": "https://github.com/InkiChang/sakuramedia_javranking/releases/download/v1.3.2/sakuramedia_javranking-1.3.2.zip",
+    "sha256": "25a2789b3fdc07c54976638e579ee7dc982ccdd5972f17b06f0647f0c8a1dd68",
+    "published_at": "2026-11-26T03:35:00Z"
+  },
+  "display_name_i18n": {
+    "zh-CN": "JavRanking 影片排行榜",
+    "en": "JavRanking Movie Rankings"
+  },
+  "description_i18n": {
+    "zh-CN": "同步 JavRanking 的四个榜单，支持一次手动同步或每周定时更新。",
+    "en": "Sync four JavRanking boards with manual and weekly scheduled updates."
+  }
 }
