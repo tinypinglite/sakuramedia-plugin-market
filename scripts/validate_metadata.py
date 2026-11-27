@@ -217,8 +217,6 @@ def validate_release(
     entry = plugins_by_id.get(plugin_id)
     if entry is None:
         errors.append(f"{name}: 没有对应的 plugins/{plugin_id}.json")
-    elif entry.get("source", SOURCE_EXTERNAL) != SOURCE_MARKET:
-        errors.append(f"{name}: 只有 source=market 的插件需要 releases 文件")
 
     required = ("tag_name", "name", "body", "published_at", "assets")
     missing = [field for field in required if field not in data]

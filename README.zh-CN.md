@@ -25,8 +25,10 @@ SakuraMedia 插件市场的索引仓库。SakuraMedia 客户端在「系统设�
    }
    ```
 
-2. 社区插件的 `latest` 字段不要手写：索引维护流程会每天自动从仓库的最新 Release 同步版本号、下载地址和 sha256。版本号必须是 `x.y.z` 三段格式，Release 里只放一个 `.zip` 插件包（可附带 `.sha256` 文件）。`source` 可省略，缺省按 `external` 处理。
-3. 向本仓库提交 Pull Request，说明插件用途与仓库地址；官方插件由维护者自动写入（多数来自私有 monorepo 的发版 Action，`sakuramedia_local_provider` 来自其公开源码仓），不接受外部 PR 修改。
+2. 社区插件的 `latest` 字段不要手写：索引维护流程会从仓库的 Release 自动同步版本号、下载地址和 sha256（`source=external` 每 30 分钟一次，全量校验每天一次）。版本号必须是 `x.y.z` 三段格式，Release 里只放一个 `.zip` 插件包（可附带 `.sha256` 文件）。`source` 可省略，缺省按 `external` 处理。
+   - Release tag 默认按 `v<version>` 识别；一个仓库放多个插件时（如公开 monorepo `sakuramedia-open-plugins`）要求 tag 用 `<plugin_id>-v<version>`，同步时只会挑出属于对应插件的 tag。
+   - 同步还会生成 `releases/<plugin_id>.json`（`tag_name` 固定为 `v<version>`），插件可以把 `manifest.json` 的 `release_api_url` 指向 `https://tinypinglite.github.io/sakuramedia-plugin-market/releases/<plugin_id>.json` 让客户端检查更新。
+3. 向本仓库提交 Pull Request，说明插件用途与仓库地址；官方插件由维护者自动写入（闭源官方插件来自私有 monorepo 的发版 Action，开源插件来自公开 monorepo `sakuramedia-open-plugins`），不接受外部 PR 修改。
 
 分类可选值：`storage`（存储 / 下载）、`metadata`（元数据）、`discovery`（榜单 / 发现）、`automation`（自动化任务）、`subtitle`（字幕）、`other`。
 

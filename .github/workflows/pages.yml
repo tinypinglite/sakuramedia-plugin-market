@@ -9,6 +9,10 @@ on:
       - 'skills/**'
       - 'index.json'
       - '.github/workflows/pages.yml'
+  # GITHUB_TOKEN 的推送不会触发 push 工作流，定时同步后单独补一次部署
+  workflow_run:
+    workflows: ['Sync plugin releases']
+    types: [completed]
   workflow_dispatch:
 
 permissions:
@@ -22,6 +26,8 @@ concurrency:
 
 jobs:
   deploy:
+    # 定时同步失败时不要用旧内容覆盖 Pages
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

@@ -2,8 +2,14 @@ name: Sync plugin releases
 
 on:
   schedule:
-    # 每天 02:00 UTC（北京时间 10:00）
+    # 轻量同步：只跟 source=external（公开源码仓）的 Releases，不重新下载市场仓资产
+    - cron: '*/30 * * * *'
+    # 全量校验：含 source=market 插件包的 sha256 复核
     - cron: '0 2 * * *'
+  push:
+    branches: [main]
+    paths:
+      - 'plugins/**'
   workflow_dispatch:
 
 permissions:
@@ -24,7 +30,12 @@ jobs:
       - name: Sync releases and rebuild index.json
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python3 scripts/build_index.py
+        run: |
+          args=""
+          if [ "${{ github.event.schedule }}" = "*/30 * * * *" ]; then
+            args="--source external"
+          fi
+          python3 scripts/build_index.py $args
       - name: Validate metadata
         run: python3 scripts/validate_metadata.py
       - name: Commit changes

@@ -7,17 +7,20 @@
 
 流程：
 1. 读取 plugins/*.json（人工维护的静态元数据，含 repo / source 字段）；
-2. source=external：查询仓库的最新 Release，下载其中的 .zip 资产；
+2. source=external：查询发布仓的 Releases，按 tag 选出该插件最新正式版；
+   单插件仓用 ``v<version>``，公开 monorepo 用 ``<plugin_id>-v<version>``；
    source=market：直接使用元数据里已提交的 latest，下载并校验 zip；
 3. 读取包内 manifest.json，校验 plugin_id、版本号与 host_api_version；
-4. source=external 时回写 latest 字段；
+4. source=external 时回写 latest，并生成 releases/<plugin_id>.json
+   （客户端查更新时读这份文件，tag_name 统一成 ``v<version>``）；
 5. 把 manifest 里的展示名与简介同步到元数据（display_name / display_name_i18n /
    description / description_i18n）：manifest 给了就以 manifest 为准，没给的文案保留
    市场原值，多语言字典缺席时删掉该键；
 6. 汇总生成 index.json。
 
---only 只同步指定插件，但仍用全部插件元数据重建 index.json。任一插件同步失败时
-不写入任何文件，避免市场出现半截数据。
+--only 只同步指定插件；--source 只同步某一类来源（定时任务用它做轻量同步）；
+两者都仍用全部插件元数据重建 index.json。任一插件同步失败时不写入任何文件，
+避免市场出现半截数据。
 """
 
 from __future__ import annotations
@@ -38,8 +41,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PLUGINS_DIR = ROOT / "plugins"
+RELEASES_DIR = ROOT / "releases"
 INDEX_PATH = ROOT / "index.json"
-TAG_RE = re.compile(r"^v?(\d+\.\d+\.\d+)$")
 VERSION_RE = re.compile(r"^\d+\.\d+\.\d+$")
 VALID_CATEGORIES = {
     "storage",
@@ -74,7 +77,7 @@ def _retry(operation, *, attempts: int = 5):
     raise last_error
 
 
-def github_get(url: str, token: str | None) -> dict:
+def github_get(url: str, token: str | None):
     headers = {"Accept": "application/vnd.github+json", "User-Agent": USER_AGENT}
     if token:
         headers["Authorization"] = f"Bearer {token}"
@@ -100,16 +103,77 @@ def fail(identifier: str, message: str) -> None:
     raise ValueError(f"{identifier}: {message}")
 
 
-def sync_external_plugin(metadata: dict, token: str | None) -> dict:
-    repo = metadata["repo"]
-    release = github_get(
-        f"https://api.github.com/repos/{repo}/releases/latest", token
+def external_tag_version(plugin_id: str, tag: object) -> str | None:
+    """从 Release tag 解析版本号：单插件仓 ``v1.2.3``、monorepo ``<id>-v1.2.3``。"""
+    if not isinstance(tag, str):
+        return None
+    value = tag.strip()
+    for prefix in (f"{plugin_id}-v", "v"):
+        if value.startswith(prefix):
+            version = value[len(prefix) :]
+            return version if VERSION_RE.fullmatch(version) else None
+    return None
+
+
+def select_external_release(
+    releases: list[dict], plugin_id: str
+) -> tuple[dict, str]:
+    """挑出该插件最新的正式 Release；monorepo 里其他插件的 tag 直接忽略。"""
+    best: tuple[tuple[int, int, int], dict, str] | None = None
+    for release in releases:
+        if not isinstance(release, dict):
+            continue
+        if release.get("draft") or release.get("prerelease"):
+            continue
+        version = external_tag_version(plugin_id, release.get("tag_name"))
+        if version is None:
+            continue
+        key = tuple(int(part) for part in version.split("."))
+        if best is None or key > best[0]:
+            best = (key, release, version)
+    if best is None:
+        fail(plugin_id, "来源仓没有符合 tag 规范的正式 Release")
+    return best[1], best[2]
+
+
+def write_release_metadata(
+    metadata: dict,
+    release: dict,
+    version: str,
+    asset: dict,
+    sha256: str,
+) -> None:
+    """生成 releases/<plugin_id>.json：客户端查更新时读它，tag_name 统一成 v<x.y.z>。"""
+    plugin_id = metadata["plugin_id"]
+    display_name = metadata.get("display_name") or plugin_id
+    dump_json(
+        RELEASES_DIR / f"{plugin_id}.json",
+        {
+            "tag_name": f"v{version}",
+            "name": f"{display_name} v{version}",
+            "body": release.get("body") or "",
+            "published_at": release.get("published_at"),
+            "assets": [
+                {
+                    "name": asset["name"],
+                    "browser_download_url": asset["browser_download_url"],
+                    "digest": f"sha256:{sha256}",
+                }
+            ],
+        },
     )
-    tag = str(release.get("tag_name", "")).strip()
-    match = TAG_RE.match(tag)
-    if match is None:
-        fail(repo, f"无法从 tag 解析三段版本号: {tag!r}")
-    version = match.group(1)
+
+
+def sync_external_plugin(metadata: dict, token: str | None) -> dict:
+    """外部源码仓：按 tag 找该插件最新正式版，版本没变就不重复下载 zip。"""
+    repo = metadata["repo"]
+    plugin_id = metadata["plugin_id"]
+    releases = github_get(
+        f"https://api.github.com/repos/{repo}/releases?per_page=100", token
+    )
+    if not isinstance(releases, list):
+        fail(repo, "Releases 接口没有返回数组")
+    release, version = select_external_release(releases, plugin_id)
 
     assets = [
         asset
@@ -117,38 +181,48 @@ def sync_external_plugin(metadata: dict, token: str | None) -> dict:
         if str(asset.get("name", "")).lower().endswith(".zip")
     ]
     if not assets:
-        fail(repo, f"Release {tag} 没有 .zip 资产")
+        fail(repo, f"Release {release.get('tag_name')!r} 没有 .zip 资产")
     asset = assets[0]
+    download_url = asset.get("browser_download_url")
+    latest = metadata.get("latest")
+    if not isinstance(latest, dict):
+        latest = {}
 
-    payload = download(asset["browser_download_url"])
-    sha256 = hashlib.sha256(payload).hexdigest()
-    try:
-        with zipfile.ZipFile(BytesIO(payload)) as archive:
-            manifest = json.loads(archive.read("manifest.json"))
-    except (KeyError, zipfile.BadZipFile) as error:
-        fail(repo, f"插件包缺少合法的 manifest.json: {error}")
-        raise
-
-    if manifest.get("plugin_id") != metadata["plugin_id"]:
-        fail(
-            repo,
-            "manifest.plugin_id 不匹配: "
-            f"{manifest.get('plugin_id')!r} != {metadata['plugin_id']!r}",
-        )
-    if manifest.get("version") != version:
-        fail(
-            repo,
-            f"manifest.version({manifest.get('version')!r}) 与 tag 版本 {version!r} 不一致",
-        )
+    if latest.get("version") == version and latest.get("download_url") == download_url:
+        host_api_version = latest.get("host_api_version")
+        sha256 = latest.get("sha256")
+    else:
+        payload = download(download_url)
+        sha256 = hashlib.sha256(payload).hexdigest()
+        try:
+            with zipfile.ZipFile(BytesIO(payload)) as archive:
+                manifest = json.loads(archive.read("manifest.json"))
+        except (KeyError, zipfile.BadZipFile) as error:
+            fail(repo, f"插件包缺少合法的 manifest.json: {error}")
+            raise
+        if manifest.get("plugin_id") != plugin_id:
+            fail(
+                repo,
+                "manifest.plugin_id 不匹配: "
+                f"{manifest.get('plugin_id')!r} != {plugin_id!r}",
+            )
+        if manifest.get("version") != version:
+            fail(
+                repo,
+                f"manifest.version({manifest.get('version')!r}) 与 tag 版本 "
+                f"{version!r} 不一致",
+            )
+        host_api_version = manifest["host_api_version"]
+        apply_manifest_text(metadata, manifest, repo)
 
     metadata["latest"] = {
         "version": version,
-        "host_api_version": int(manifest["host_api_version"]),
-        "download_url": asset["browser_download_url"],
+        "host_api_version": int(host_api_version),
+        "download_url": download_url,
         "sha256": sha256,
         "published_at": release.get("published_at"),
     }
-    apply_manifest_text(metadata, manifest, repo)
+    write_release_metadata(metadata, release, version, asset, sha256)
     return metadata
 
 
@@ -313,21 +387,32 @@ def main() -> int:
         default=None,
         help="只同步指定 plugin_id，但仍用全部插件元数据重建 index.json",
     )
+    parser.add_argument(
+        "--source",
+        default=None,
+        choices=sorted(VALID_SOURCES),
+        help="只同步某一类来源的插件（存量 latest 原样保留）",
+    )
     args = parser.parse_args()
 
     token = os.environ.get("GITHUB_TOKEN") or None
     entries = load_plugin_files()
+    selected = entries
+    if args.source:
+        selected = [
+            (path, metadata)
+            for path, metadata in selected
+            if metadata.get("source", SOURCE_EXTERNAL) == args.source
+        ]
     if args.only:
         selected = [
             (path, metadata)
-            for path, metadata in entries
+            for path, metadata in selected
             if metadata["plugin_id"] == args.only
         ]
         if not selected:
             print(f"未找到插件: {args.only}", file=sys.stderr)
             return 1
-    else:
-        selected = entries
 
     synced: list[tuple[Path, dict]] = []
     for path, metadata in selected:

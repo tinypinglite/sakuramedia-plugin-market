@@ -24,8 +24,10 @@ Index repository for the SakuraMedia plugin market. SakuraMedia clients read thi
    }
    ```
 
-2. Do not hardcode the `latest` field for community plugins: the index maintenance workflow automatically syncs the version, download URL, and SHA-256 from the repository's latest Release every day. Versions must use the three-part `x.y.z` format, and each Release must contain only one `.zip` plugin package (an optional `.sha256` file may be included). `source` can be omitted and defaults to `external`.
-3. Submit a Pull Request to this repository explaining the plugin's purpose and repository URL. Official plugins are written automatically by maintainers (most through the release Action in a private monorepo; `sakuramedia_local_provider` from its public source repository), and external PRs modifying them are not accepted.
+2. Do not hardcode the `latest` field for community plugins: the index maintenance workflow syncs the version, download URL, and SHA-256 from the repository's Releases (`source=external` every 30 minutes, a full verification once a day). Versions must use the three-part `x.y.z` format, and each Release must contain only one `.zip` plugin package (an optional `.sha256` file may be included). `source` can be omitted and defaults to `external`.
+   - Release tags are read as `v<version>` by default. Repositories that host several plugins (such as the public monorepo `sakuramedia-open-plugins`) must use `<plugin_id>-v<version>`; the sync only picks the tags that belong to the plugin.
+   - The sync also writes `releases/<plugin_id>.json` (with `tag_name` normalized to `v<version>`); a plugin can point `release_api_url` in its `manifest.json` at `https://tinypinglite.github.io/sakuramedia-plugin-market/releases/<plugin_id>.json` for client-side update checks.
+3. Submit a Pull Request to this repository explaining the plugin's purpose and repository URL. Official plugins are written automatically by maintainers (closed-source ones through the release Action in a private monorepo, open-source ones from the public monorepo `sakuramedia-open-plugins`), and external PRs modifying them are not accepted.
 
 Available categories: `storage` (storage / downloads), `metadata` (metadata), `discovery` (rankings / discovery), `automation` (automated tasks), `subtitle` (subtitles), and `other`.
 

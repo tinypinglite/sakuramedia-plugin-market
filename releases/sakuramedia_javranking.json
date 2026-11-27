@@ -1,0 +1,13 @@
+{
+  "tag_name": "v1.3.2",
+  "name": "JavRanking 影片排行榜 v1.3.2",
+  "body": "## 包\n\n- `sakuramedia_javranking-1.3.2.zip` — 插件包（Release 中唯一的插件 ZIP）\n- `sakuramedia_javranking-1.3.2.zip.sha256` — SHA-256 校验文件\n\nSHA-256: `25a2789b3fdc07c54976638e579ee7dc982ccdd5972f17b06f0647f0c8a1dd68`\n\n## 变更（相对 1.3.1）\n\n- 新增 manifest 多语言元数据 `display_name_i18n` / `description_i18n`（zh-CN / en），市场索引将自动同步；英文界面不再显示中文原文。\n- 插件代码与 1.3.1 一致（DMM 单榜冷启动验收、11 项回归测试均针对同一代码）。\n\n## 已知限制\n\n- 入库覆盖率取决于已启用的元数据源：独立空库实测仅默认 JavBus/AVMOO 源时，DMM 周榜写入 8–11/84 条；未配置代理或元数据源不可达时更低。跳过数会在任务结果中如实记录。\n- ARM64 未测试；验证环境为 Linux amd64、SakuraMedia 0.16.0。\n- 全站神作总榜首次同步需解析 100 个公开影片详情页，耗时较长；番号缓存不可写时自动退化为内存模式。",
+  "published_at": "2026-11-26T03:35:00Z",
+  "assets": [
+    {
+      "name": "sakuramedia_javranking-1.3.2.zip",
+      "browser_download_url": "https://github.com/InkiChang/sakuramedia_javranking/releases/download/v1.3.2/sakuramedia_javranking-1.3.2.zip",
+      "digest": "sha256:25a2789b3fdc07c54976638e579ee7dc982ccdd5972f17b06f0647f0c8a1dd68"
+    }
+  ]
+}

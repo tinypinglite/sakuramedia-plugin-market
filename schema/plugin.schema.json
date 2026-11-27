@@ -55,7 +55,7 @@
     "repo": {
       "type": "string",
       "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$",
-      "description": "公开的 GitHub 仓库（owner/name）。source=market 时指向市场仓；source=external 时是插件源码仓，Release 里提供插件 zip"
+      "description": "公开的 GitHub 仓库（owner/name）。source=market 时指向市场仓；source=external 时是插件源码仓，Release 里提供插件 zip，tag 为 v<version> 或 <plugin_id>-v<version>（一个仓放多个插件时）"
     },
     "homepage": {
       "type": "string",

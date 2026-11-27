@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-26T04:06:20Z",
+  "updated_at": "2026-11-28T07:49:59Z",
   "plugins": [
     {
       "plugin_id": "sakuramedia_115_provider",
@@ -319,8 +319,8 @@
       "display_name": "本地存储与 qBittorrent",
       "description": "接入本地媒体目录，提供手动导入、qBittorrent 下载、后端代理播放、缩略图和片段。",
       "author": "SakuraMedia",
-      "repo": "tinypinglite/sakuramedia_local_provider",
-      "homepage": "https://github.com/tinypinglite/sakuramedia_local_provider",
+      "repo": "tinypinglite/sakuramedia-open-plugins",
+      "homepage": "https://github.com/tinypinglite/sakuramedia-open-plugins",
       "categories": [
         "storage"
       ],
@@ -329,7 +329,7 @@
       "latest": {
         "version": "0.2.18",
         "host_api_version": 18,
-        "download_url": "https://github.com/tinypinglite/sakuramedia_local_provider/releases/download/v0.2.18/sakuramedia_local_provider-0.2.18.zip",
+        "download_url": "https://github.com/tinypinglite/sakuramedia-open-plugins/releases/download/v0.2.18/sakuramedia_local_provider-0.2.18.zip",
         "sha256": "db980ef936509a72b4736ed5ea89d6781f1d330c0f2b724bc5002181d023395f",
         "published_at": "2026-11-23T02:10:57Z"
       },
