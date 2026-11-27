@@ -115,11 +115,25 @@ def external_tag_version(plugin_id: str, tag: object) -> str | None:
     return None
 
 
+def zip_assets(release: dict) -> list[dict]:
+    return [
+        asset
+        for asset in release.get("assets") or []
+        if isinstance(asset, dict)
+        and str(asset.get("name", "")).lower().endswith(".zip")
+    ]
+
+
 def select_external_release(
     releases: list[dict], plugin_id: str
 ) -> tuple[dict, str]:
-    """挑出该插件最新的正式 Release；monorepo 里其他插件的 tag 直接忽略。"""
+    """挑出该插件最新的、构建产物已就绪的正式 Release。
+
+    monorepo 里其他插件的 tag 直接忽略；刚发布、流水线还没传 zip 的版本先跳过，
+    等下一轮同步再收，避免发版窗口里把整个市场同步打挂。
+    """
     best: tuple[tuple[int, int, int], dict, str] | None = None
+    pending: list[str] = []
     for release in releases:
         if not isinstance(release, dict):
             continue
@@ -128,11 +142,17 @@ def select_external_release(
         version = external_tag_version(plugin_id, release.get("tag_name"))
         if version is None:
             continue
+        if not zip_assets(release):
+            pending.append(str(release.get("tag_name")))
+            continue
         key = tuple(int(part) for part in version.split("."))
         if best is None or key > best[0]:
             best = (key, release, version)
     if best is None:
-        fail(plugin_id, "来源仓没有符合 tag 规范的正式 Release")
+        hint = f"（等待构建产物: {pending}）" if pending else ""
+        fail(plugin_id, f"来源仓没有可用的正式 Release{hint}")
+    if pending:
+        print(f"跳过尚未上传 zip 的 Release: {pending}", file=sys.stderr)
     return best[1], best[2]
 
 
@@ -175,14 +195,7 @@ def sync_external_plugin(metadata: dict, token: str | None) -> dict:
         fail(repo, "Releases 接口没有返回数组")
     release, version = select_external_release(releases, plugin_id)
 
-    assets = [
-        asset
-        for asset in release.get("assets", [])
-        if str(asset.get("name", "")).lower().endswith(".zip")
-    ]
-    if not assets:
-        fail(repo, f"Release {release.get('tag_name')!r} 没有 .zip 资产")
-    asset = assets[0]
+    asset = zip_assets(release)[0]
     download_url = asset.get("browser_download_url")
     latest = metadata.get("latest")
     if not isinstance(latest, dict):

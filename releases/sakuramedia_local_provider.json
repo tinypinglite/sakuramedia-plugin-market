@@ -1,13 +1,13 @@
 {
-  "tag_name": "v0.2.18",
-  "name": "本地存储与 qBittorrent v0.2.18",
-  "body": "## ✨ 体验优化\n\n- 插件迁移到独立的公开源码仓库，源码可以直接在 GitHub 查看：https://github.com/tinypinglite/sakuramedia_local_provider\n- 安装、配置和使用方式不变。\n\n## ⚠️ 兼容性变化\n\n- 旧版本在插件详情里检查更新可能会提示失败，请从插件市场页升级，或升级后端后由内置插件自动更新。\n",
-  "published_at": "2026-11-23T02:10:57Z",
+  "tag_name": "v0.2.19",
+  "name": "本地存储与 qBittorrent v0.2.19",
+  "body": "## 📦 本版内容\n\n插件代码与 0.2.18 完全一致，只随源码仓库迁移更新了 `manifest.json`：\n\n- 源码迁到公开 monorepo `tinypinglite/sakuramedia-open-plugins`（目录 `sakuramedia_local_provider/`），源码仍然公开可审阅。\n- `release_api_url` 改为插件市场的 `releases/sakuramedia_local_provider.json`，插件详情页的「检查更新」恢复可用。\n- `homepage` 指向新的源码仓库。\n\n安装、配置和使用方式不变；升级后不需要重新配置。\n\n## ⚠️ 兼容性变化\n\n- 发布 tag 从 `v<version>` 改为 `<plugin_id>-v<version>`（一个仓放多个插件后的统一规则）。旧版本链接由 GitHub 重定向兜住。\n",
+  "published_at": "2026-11-28T07:51:03Z",
   "assets": [
     {
-      "name": "sakuramedia_local_provider-0.2.18.zip",
-      "browser_download_url": "https://github.com/tinypinglite/sakuramedia-open-plugins/releases/download/v0.2.18/sakuramedia_local_provider-0.2.18.zip",
-      "digest": "sha256:db980ef936509a72b4736ed5ea89d6781f1d330c0f2b724bc5002181d023395f"
+      "name": "sakuramedia_local_provider-0.2.19.zip",
+      "browser_download_url": "https://github.com/tinypinglite/sakuramedia-open-plugins/releases/download/sakuramedia_local_provider-v0.2.19/sakuramedia_local_provider-0.2.19.zip",
+      "digest": "sha256:2979812a5f63ea19c7c8aae63552370cfc02afeb3d860a4050eaa264b7e88dcb"
     }
   ]
 }
